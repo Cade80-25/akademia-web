@@ -1,78 +1,128 @@
 <!doctype html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Academia Universal — Centro educativo virtual con tutores IA</title>
-<meta name="description" content="Academia Universal: plataforma educativa con tutores IA personalizados. En reconstrucción — conocé el proyecto.">
-<style>
-:root{
-  --bg:#0f1220; --bg2:#151a30; --card:#1a2040; --border:#2a3158;
-  --text:#e8eaf6; --muted:#9aa3c9; --accent:#6c8cff; --accent2:#8f6cff;
-  --gold:#c99a3a;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
-.wrap{max-width:900px;margin:0 auto;padding:0 22px}
-header{padding:16px 0;border-bottom:1px solid var(--border)}
-nav{display:flex;justify-content:space-between;align-items:center}
-.logo{display:flex;align-items:center;gap:12px}
-.logo-mark{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff}
-.logo b{font-size:18px;letter-spacing:.4px}
-.logo small{display:block;font-size:10px;color:var(--muted);letter-spacing:1.4px}
-.hero{text-align:center;padding:80px 0 60px;background:radial-gradient(ellipse at top,#1a2350 0%,var(--bg) 70%)}
-.badge{display:inline-block;background:rgba(108,140,255,.12);color:var(--accent);border:1px solid rgba(108,140,255,.35);padding:6px 18px;border-radius:20px;font-size:13.5px;font-weight:600;margin-bottom:24px;letter-spacing:.3px}
-.hero h1{font-size:40px;line-height:1.15;margin-bottom:18px;font-weight:800}
-.hero h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p{font-size:18px;color:var(--muted);max-width:620px;margin:0 auto 28px}
-.pill{display:inline-block;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:10px 22px;font-size:14.5px;color:var(--text)}
-.pill b{color:var(--gold)}
-section{padding:52px 0;border-top:1px solid var(--border)}
-h2{text-align:center;font-size:26px;margin-bottom:28px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px}
-.card h3{font-size:16.5px;margin-bottom:8px;color:var(--text)}
-.card p{color:var(--muted);font-size:14.5px}
-.card .tag{display:inline-block;font-size:11.5px;color:var(--accent);border:1px solid rgba(108,140,255,.3);border-radius:12px;padding:2px 10px;margin-bottom:10px}
-.aviso{background:linear-gradient(90deg,rgba(201,154,58,.08),rgba(108,140,255,.06));border:1px solid rgba(201,154,58,.3);border-radius:14px;padding:26px 30px;text-align:center;max-width:700px;margin:36px auto 0}
-.aviso h3{color:var(--gold);margin-bottom:10px;font-size:19px}
-.aviso p{color:var(--muted);font-size:15px}
-.aviso a{color:var(--accent)}
-footer{border-top:1px solid var(--border);padding:28px 0;text-align:center;color:var(--muted);font-size:13px}
-footer b{color:var(--text)}
-@media(max-width:640px){.hero h1{font-size:28px}}
-</style>
-</head>
-<body>
-<header><div class="wrap"><nav>
-<div class="logo"><div class="logo-mark">AU</div><div><b>ACADEMIA UNIVERSAL</b><small>CENTRO EDUCATIVO VIRTUAL</small></div></div>
-<a href="#contacto" style="color:var(--accent);text-decoration:none;font-size:14.5px;font-weight:600">Contacto</a>
-</nav></div></header>
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XD5DR30JQ5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XD5DR30JQ5');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <!-- Content Security Policy: restringe orígenes para reducir riesgos de XSS -->
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      base-uri 'self';
+      object-src 'none';
+      
+      form-action 'self' https://www.paypal.com https://www.sandbox.paypal.com;
+      script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: https://www.googletagmanager.com https://www.google-analytics.com https://www.paypal.com https://www.sandbox.paypal.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://ipapi.co;
+      script-src-elem 'self' 'unsafe-inline' blob: https://www.googletagmanager.com https://www.google-analytics.com https://www.paypal.com https://www.sandbox.paypal.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;
+      worker-src 'self' blob:;
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net;
+      style-src-elem 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net;
+      font-src 'self' data: https://fonts.gstatic.com https://fonts.googleapis.com https://cdn.jsdelivr.net;
+      img-src 'self' data: blob: https: http://www.w3.org;
+      media-src 'self' data: blob: https:;
+      connect-src 'self' blob: https://jypepekzkaydfplwwwsr.supabase.co wss://jypepekzkaydfplwwwsr.supabase.co https://api.elevenlabs.io https://api.openai.com https://www.googletagmanager.com https://www.google-analytics.com https://*.analytics.google.com https://*.google-analytics.com https://geocoding-api.open-meteo.com https://commons.wikimedia.org https://upload.wikimedia.org https://maps.wikimedia.org https://*.tile.openstreetmap.org https://tile.openstreetmap.org https://*.opentopomap.org https://opentopomap.org https://*.cyclosm.org https://www.cyclosm.org https://www.hotosm.org https://www.openrailwaymap.org https://www.openstreetmap.org https://storage.googleapis.com https://www.solarsystemscope.com https://www.paypal.com https://www.sandbox.paypal.com https://api.paypal.com https://ipapi.co;
+      frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://www.paypal.com https://www.sandbox.paypal.com;
+      manifest-src 'self';
+      upgrade-insecure-requests;
+    " />
+    <title>Academia Universal - Centro Educativo Virtual con Tutores IA</title>
+    <meta name="description" content="Centro educativo virtual con tutores IA adaptativos. Más de 30 materias para todos los niveles educativos. Aprende a tu ritmo con inteligencia artificial.">
+    <meta name="author" content="Academia Universal" />
+    <meta name="msvalidate.01" content="43091B1740E31D04C4467E0F70D0B706" />
+    <meta name="yandex-verification" content="ef90b24cf6cfd21f" />
+    <meta name="google-site-verification" content="Pux0QINfQp-iMYpX5_q8qhuA4lTtdEdfGOXMFR5G3T4" />
+    <meta name="theme-color" content="#0a0a1a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Academia" />
+    <link rel="apple-touch-icon" href="/pwa-icon-192.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/pwa-icon-192.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://jypepekzkaydfplwwwsr.supabase.co" />
+    <link rel="canonical" href="https://akademiauniversalis.com/" />
 
-<div class="hero"><div class="wrap">
-<div class="badge">En reconstrucción — nueva plataforma en camino</div>
-<h1>Aprender con <span>tutores IA</span>,<br>a tu manera.</h1>
-<p>Academia Universal es un centro educativo virtual: tutores de inteligencia artificial personalizados que se adaptan a tu ritmo, tus metas y tu forma de aprender.</p>
-<div class="pill">Projecto de <b>CAP INDUSTRIES</b> · Montevideo, Uruguay</div>
-</div></div>
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://akademiauniversalis.com/" />
+    <meta property="og:site_name" content="Academia Universal" />
+    <meta property="og:image" content="https://akademiauniversalis.com/og-image.jpg">
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:title" content="Academia Universal - Centro Educativo Virtual con Tutores IA">
+    <meta property="og:description" content="Explora más de 30 disciplinas con tutores IA que se adaptan a tu nivel. Desde la antigüedad hasta la era digital.">
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:locale:alternate" content="pt_BR" />
 
-<section><div class="wrap">
-<h2>Qué será la nueva plataforma</h2>
-<div class="grid">
-<div class="card"><span class="tag">Tutores IA</span><h3>Un tutor para cada materia</h3><p>Tutores de IA que explican, corrigen y adaptan el contenido a tu nivel — disponible siempre.</p></div>
-<div class="card"><span class="tag">Cursos</span><h3>Cursos estructurados</h3><p>Programas con progreso medible, ejercicios y evaluaciones reales, no solo videos.</p></div>
-<div class="card"><span class="tag">Personal</span><h3>Ritmo propio</h3><p>La plataforma se adapta a tu disponibilidad de tiempo y a tus objetivos, no al revés.</p></div>
-<div class="card"><span class="tag">Medible</span><h3>Progreso real</h3><p>Seguimiento claro de avances por curso y por habilidad, para alumnos y tutores humanos.</p></div>
-</div>
-<div class="aviso">
-<h3>Estamos reconstruyendo la plataforma</h3>
-<p>La versión anterior fue descontinuada para construir algo mejor. Si querés ser de los primeros en entrar a la nueva Academia Universal o tenés consultas, escribinos: <a href="mailto:hola@akademiauniversalis.com">hola@akademiauniversalis.com</a></p>
-</div>
-</div></section>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@AcademiaUniversal" />
+    <meta name="twitter:image" content="https://akademiauniversalis.com/og-image.jpg">
+    <meta name="twitter:title" content="Academia Universal - Centro Educativo Virtual con Tutores IA">
+    <meta name="twitter:description" content="Explora más de 30 disciplinas con tutores IA que se adaptan a tu nivel. Desde la antigüedad hasta la era digital.">
 
-<footer><div class="wrap">
-<p><b>ACADEMIA UNIVERSAL</b> — un proyecto de CAP INDUSTRIES</p>
-<p style="margin-top:6px">© 2026 · Montevideo, Uruguay</p>
-</div></footer>
-</body>
+    <!-- Structured data: Educational Organization + Course catalog for rich snippets and AI search -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Academia Universal",
+      "alternateName": "Akademia Universalis",
+      "url": "https://akademiauniversalis.com",
+      "logo": "https://akademiauniversalis.com/pwa-icon-192.png",
+      "description": "Centro educativo virtual con tutores IA adaptativos. Más de 37 disciplinas, simulaciones 3D, atlas, certificados verificables y acceso de por vida.",
+      "sameAs": [],
+      "areaServed": "Worldwide",
+      "inLanguage": ["es", "en", "pt"],
+      "offers": {
+        "@type": "Offer",
+        "category": "Lifetime access",
+        "price": "10",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://akademiauniversalis.com/precios"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Catálogo Academia Universal: 37 disciplinas",
+      "description": "Aula virtual con tutores IA en matemáticas, ciencias, humanidades, artes, idiomas, tecnología y disciplinas técnicas. Adaptado de 3 a 99 años.",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "Academia Universal",
+        "sameAs": "https://akademiauniversalis.com"
+      },
+      "inLanguage": ["es", "en", "pt"],
+      "educationalLevel": "Inicial, Primaria, Media, Universitaria, Técnica",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "Online",
+        "courseWorkload": "PT1H"
+      },
+      "offers": {
+        "@type": "Offer",
+        "category": "Lifetime",
+        "price": "10",
+        "priceCurrency": "USD",
+        "url": "https://akademiauniversalis.com/precios"
+      }
+    }
+    </script>
+    <script type="module" crossorigin src="/assets/index-hfm3eGvV.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/vendor-react-D9qRVFlT.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-mermaid-CMKCYLRq.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-charts-bJ_Mv4iN.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-BJQzKdcL.css">
+  <link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
+
+  <body>
+    <div id="root"></div>
+  </body>
 </html>

@@ -1,0 +1,29 @@
+# Academia Universal (Akademia Universalis)
+
+> Centro educativo virtual con tutores IA adaptativos. Más de 37 disciplinas en 7 categorías para niveles desde educación inicial (3-5 años) hasta universitario y técnico profesional. Aula en vivo con voz, pizarra interactiva, simulaciones 3D, atlas astronómico, mapas educativos, certificados verificables y comunidad.
+
+Academia Universal combina conocimiento clásico y moderno con más de 70 tutores históricos y técnicos (Sócrates, Hipatia, Comenio, Curie, Einstein, Turing, etc.). Acceso de por vida con un único pago: USD 10 estudiante, USD 12 profesor, USD 18 dual. Sin suscripciones. Pago por PayPal (acepta tarjeta como invitado). Precios por volumen para instituciones educativas.
+
+## Pages
+
+- [Inicio](https://akademiauniversalis.com/): Visión general y recorrido guiado con Prof. Comenio.
+- [Materias](https://akademiauniversalis.com/materias): Catálogo completo de las 37 disciplinas organizadas en 7 categorías.
+- [Aula virtual](https://akademiauniversalis.com/aula): Sesiones en vivo con tutores IA, voz bidireccional, pizarra y multimedia.
+- [Rutas de aprendizaje](https://akademiauniversalis.com/rutas): Secuencias de lecciones con seguimiento de progreso.
+- [Biblioteca](https://akademiauniversalis.com/biblioteca): Sesiones pasadas, PDFs analizados (hasta 1.5 GB) y materiales personales.
+- [Mapas](https://akademiauniversalis.com/mapas): Atlas con más de 40 mapas educativos interactivos (geográficos, históricos, temáticos).
+- [Astronomía](https://akademiauniversalis.com/astronomia): Planetario virtual con cielo nocturno realista, Sistema Solar 3D y catálogo Messier.
+- [Comunidad](https://akademiauniversalis.com/comunidad): Grupos públicos y privados con chat en tiempo real.
+- [Logros](https://akademiauniversalis.com/logros): Sistema de 17 insignias, rachas diarias y ranking comunitario.
+- [Mis certificados](https://akademiauniversalis.com/mis-certificados): Certificados verificables descargables en PDF con código AU-CERT-XXXX.
+- [Portal profesor](https://akademiauniversalis.com/profesor): Suite pedagógica con planificación, evaluaciones, corrección IA y grupos.
+- [Mis tareas](https://akademiauniversalis.com/mis-tareas): Asignaciones para estudiantes con texto enriquecido y adjuntos.
+- [Institución](https://akademiauniversalis.com/institucion): Modelo multi-tenant con códigos INV-ABC123 para invitar estudiantes.
+- [Precios](https://akademiauniversalis.com/precios): Acceso de por vida y planes institucionales por volumen.
+- [Instalar](https://akademiauniversalis.com/instalar): Guía para instalar la PWA en PC, Mac, Android e iOS.
+
+## Optional
+
+- [Iniciar sesión](https://akademiauniversalis.com/auth): Acceso con email o Google.
+- [Política de reembolsos](https://akademiauniversalis.com/reembolsos): Garantía y condiciones de devolución.
+- [Términos y condiciones](https://akademiauniversalis.com/terminos): Términos de uso de la plataforma.
