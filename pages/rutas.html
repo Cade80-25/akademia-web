@@ -138,6 +138,22 @@
     </div>
   </section>
 
+  <script>
+    const rutaKeys = ['programador', 'cosmos', 'datos', 'arte'];
+    document.querySelectorAll('button').forEach((btn) => {
+      if (btn.textContent.trim() === 'Iniciar ruta') {
+        const todos = [...document.querySelectorAll('button')].filter(b => b.textContent.trim() === 'Iniciar ruta');
+        const idx = todos.indexOf(btn);
+        const key = rutaKeys[idx] || 'programador';
+        const a = document.createElement('a');
+        a.href = 'ruta-detalle.html?ruta=' + key;
+        a.className = 'btn-primary';
+        a.style.cssText = 'padding:8px 16px; font-size:0.85rem; text-align:center; text-decoration:none; display:block;';
+        a.textContent = 'Iniciar ruta';
+        btn.replaceWith(a);
+      }
+    });
+  </script>
   <footer>
     <div class="container" style="text-align:center; padding:40px 0;">
       <p style="color:var(--muted); font-size:0.9rem;">© 2026 AkademiaUniversalis. Universidad virtual.</p>
