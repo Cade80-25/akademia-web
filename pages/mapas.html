@@ -83,6 +83,22 @@
     </div>
   </section>
 
+  <script>
+    const mapaKeys = ['mundial', 'historico', 'clima', 'celeste'];
+    document.querySelectorAll('button').forEach((btn) => {
+      if (btn.textContent.trim() === 'Explorar mapa') {
+        const todos = [...document.querySelectorAll('button')].filter(b => b.textContent.trim() === 'Explorar mapa');
+        const idx = todos.indexOf(btn);
+        const key = mapaKeys[idx] || 'mundial';
+        const a = document.createElement('a');
+        a.href = 'mapa-detalle.html?mapa=' + key;
+        a.className = 'btn-primary';
+        a.style.cssText = 'padding:10px 20px; font-size:0.85rem; text-align:center; text-decoration:none; display:block;';
+        a.textContent = 'Explorar mapa';
+        btn.replaceWith(a);
+      }
+    });
+  </script>
   <footer>
     <div class="container" style="text-align:center; padding:40px 0;">
       <p style="color:var(--muted); font-size:0.9rem;">© 2026 AkademiaUniversalis. Universidad virtual.</p>
