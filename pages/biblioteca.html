@@ -56,52 +56,15 @@
       </div>
 
       <!-- Filtros rápidos -->
-      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:32px;">
-        <button class="btn-outline" style="padding:8px 16px; font-size:0.9rem;">Todos</button>
-        <button class="btn-outline" style="padding:8px 16px; font-size:0.9rem;">PDFs</button>
-        <button class="btn-outline" style="padding:8px 16px; font-size:0.9rem;">Sesiones grabadas</button>
-        <button class="btn-outline" style="padding:8px 16px; font-size:0.9rem;">Mis materiales</button>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:32px;" id="biblio-filtros">
+        <button class="filtro-btn btn-outline activo" data-tipo="todos" style="padding:8px 16px; font-size:0.9rem;">Todos</button>
+        <button class="filtro-btn btn-outline" data-tipo="pdf" style="padding:8px 16px; font-size:0.9rem;">PDFs</button>
+        <button class="filtro-btn btn-outline" data-tipo="video" style="padding:8px 16px; font-size:0.9rem;">Videos</button>
+        <button class="filtro-btn btn-outline" data-tipo="sesion" style="padding:8px 16px; font-size:0.9rem;">Sesiones grabadas</button>
       </div>
 
       <!-- Grid de materiales -->
-      <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:20px;" id="biblio-grid">
-        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:24px; display:flex; flex-direction:column;">
-          <div style="width:48px; height:48px; background:linear-gradient(135deg, var(--accent), var(--accent2)); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin-bottom:16px;">📄</div>
-          <h3 style="margin-bottom:8px;">Introducción a la Física Cuántica</h3>
-          <p style="color:var(--muted); font-size:0.9rem; margin-bottom:16px;">PDF · 45 páginas · Sesión de Física Universitaria</p>
-          <div style="margin-top:auto; display:flex; gap:8px;">
-            <button class="btn-outline" style="flex:1; padding:8px 12px; font-size:0.85rem;">Abrir</button>
-            <button class="btn-ghost" style="flex:1; padding:8px 12px; font-size:0.85rem;">Descargar</button>
-          </div>
-        </div>
-        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:24px; display:flex; flex-direction:column;">
-          <div style="width:48px; height:48px; background:linear-gradient(135deg, var(--gold), #fbbf24); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin-bottom:16px;">🎥</div>
-          <h3 style="margin-bottom:8px;">Sesión: El feudalismo europeo</h3>
-          <p style="color:var(--muted); font-size:0.9rem; margin-bottom:16px;">Grabación · 52 min · Historia Edad Media</p>
-          <div style="margin-top:auto; display:flex; gap:8px;">
-            <button class="btn-outline" style="flex:1; padding:8px 12px; font-size:0.85rem;">Reproducir</button>
-            <button class="btn-ghost" style="flex:1; padding:8px 12px; font-size:0.85rem;">Detalles</button>
-          </div>
-        </div>
-        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:24px; display:flex; flex-direction:column;">
-          <div style="width:48px; height:48px; background:linear-gradient(135deg, var(--green), #34d399); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin-bottom:16px;">📊</div>
-          <h3 style="margin-bottom:8px;">Guía de Estructuras de Datos</h3>
-          <p style="color:var(--muted); font-size:0.9rem; margin-bottom:16px;">PDF · 32 páginas · Programación Python</p>
-          <div style="margin-top:auto; display:flex; gap:8px;">
-            <button class="btn-outline" style="flex:1; padding:8px 12px; font-size:0.85rem;">Abrir</button>
-            <button class="btn-ghost" style="flex:1; padding:8px 12px; font-size:0.85rem;">Descargar</button>
-          </div>
-        </div>
-        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:24px; display:flex; flex-direction:column;">
-          <div style="width:48px; height:48px; background:linear-gradient(135deg, var(--accent2), #c084fc); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin-bottom:16px;">🌌</div>
-          <h3 style="margin-bottom:8px;">Catálogo Messier PDF</h3>
-          <p style="color:var(--muted); font-size:0.9rem; margin-bottom:16px;">PDF · 110 objetos · Astronomía</p>
-          <div style="margin-top:auto; display:flex; gap:8px;">
-            <button class="btn-outline" style="flex:1; padding:8px 12px; font-size:0.85rem;">Abrir</button>
-            <button class="btn-ghost" style="flex:1; padding:8px 12px; font-size:0.85rem;">Descargar</button>
-          </div>
-        </div>
-      </div>
+      <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:20px;" id="biblio-grid"></div>
 
       <div style="text-align:center; margin-top:40px;">
         <p style="color:var(--muted); font-size:0.9rem;">¿Buscas algo específico? <a href="materias.html" style="color:var(--accent);">Explora las materias</a> y encuentra contenido relacionado.</p>
@@ -115,5 +78,74 @@
     </div>
   </footer>
 
+  <script>
+    const materiales = [
+      { id: 1, titulo: 'Introducción a la Física Cuántica', tipo: 'pdf', categoria: 'Física', icono: '📄', detalle: 'PDF · 45 páginas · Sesión de Física Universitaria', accion: 'Abrir' },
+      { id: 2, titulo: 'Sesión: El feudalismo europeo', tipo: 'video', categoria: 'Historia', icono: '🎥', detalle: 'Grabación · 52 min · Historia Edad Media', accion: 'Reproducir' },
+      { id: 3, titulo: 'Guía de Estructuras de Datos', tipo: 'pdf', categoria: 'Programación', icono: '📊', detalle: 'PDF · 32 páginas · Programación Python', accion: 'Abrir' },
+      { id: 4, titulo: 'Catálogo Messier PDF', tipo: 'pdf', categoria: 'Astronomía', icono: '🌌', detalle: 'PDF · 110 objetos · Astronomía', accion: 'Abrir' },
+      { id: 5, titulo: 'Manual de Estadística Descriptiva', tipo: 'pdf', categoria: 'Estadística', icono: '📈', detalle: 'PDF · 38 páginas · Estadística', accion: 'Abrir' },
+      { id: 6, titulo: 'Sesión: Programación Orientada a Objetos', tipo: 'video', categoria: 'Programación', icono: '🎥', detalle: 'Grabación · 48 min · Programación', accion: 'Reproducir' },
+      { id: 7, titulo: 'Atlas de Anatomía Humana', tipo: 'pdf', categoria: 'Biología', icono: '🧬', detalle: 'PDF · 60 páginas · Biología', accion: 'Abrir' },
+      { id: 8, titulo: 'Sesión: Revolución Francesa', tipo: 'video', categoria: 'Historia', icono: '🎥', detalle: 'Grabación · 41 min · Historia Contemporánea', accion: 'Reproducir' },
+      { id: 9, titulo: 'Apuntes de Cálculo Diferencial', tipo: 'pdf', categoria: 'Cálculo', icono: '📄', detalle: 'PDF · 28 páginas · Cálculo', accion: 'Abrir' },
+      { id: 10, titulo: 'Sesión: Sistema Solar', tipo: 'video', categoria: 'Astronomía', icono: '🎥', detalle: 'Grabación · 39 min · Sistema Solar', accion: 'Reproducir' }
+    ];
+
+    const grid = document.getElementById('biblio-grid');
+    const searchInput = document.getElementById('biblio-search');
+    const filtroBtns = document.querySelectorAll('.filtro-btn');
+    let filtroActual = 'todos';
+
+    function render() {
+      const q = searchInput.value.toLowerCase().trim();
+      grid.innerHTML = '';
+      let mostrados = 0;
+      materiales.forEach(m => {
+        const coincideTipo = filtroActual === 'todos' || m.tipo === filtroActual;
+        const coincideTexto = !q || m.titulo.toLowerCase().includes(q) || m.categoria.toLowerCase().includes(q) || m.detalle.toLowerCase().includes(q);
+        if (!coincideTipo || !coincideTexto) return;
+        mostrados++;
+        const card = document.createElement('div');
+        card.className = 'reveal';
+        card.style.cssText = 'background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:24px; display:flex; flex-direction:column;';
+        card.innerHTML = `
+          <div style="width:48px; height:48px; background:linear-gradient(135deg, var(--accent), var(--accent2)); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin-bottom:16px;">${m.icono}</div>
+          <h3 style="margin-bottom:8px;">${m.titulo}</h3>
+          <p style="color:var(--muted); font-size:0.9rem; margin-bottom:16px;">${m.detalle}</p>
+          <div style="margin-top:auto; display:flex; gap:8px;">
+            <button class="btn-outline" onclick="abrirMaterial('${m.titulo}')" style="flex:1; padding:8px 12px; font-size:0.85rem;">${m.accion}</button>
+            <button class="btn-ghost" onclick="descargarMaterial('${m.titulo}')" style="flex:1; padding:8px 12px; font-size:0.85rem;">Descargar</button>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+      if (mostrados === 0) {
+        grid.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:60px 20px; color:var(--muted);">No se encontraron materiales.</div>';
+      }
+    }
+
+    window.abrirMaterial = function(titulo) {
+      const m = materiales.find(x => x.titulo === titulo);
+      alert(m ? 'Abriendo: ' + m.titulo + '\n(' + m.detalle + ')' : 'Material no encontrado.');
+    };
+
+    window.descargarMaterial = function(titulo) {
+      const m = materiales.find(x => x.titulo === titulo);
+      alert(m ? 'Descargando: ' + m.titulo + '\n(Archivo simulado — sin servidor)' : 'Material no encontrado.');
+    };
+
+    searchInput.addEventListener('input', render);
+    filtroBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filtroBtns.forEach(b => { b.classList.remove('activo'); b.classList.remove('btn-primary'); b.classList.add('btn-outline'); });
+        btn.classList.remove('btn-outline'); btn.classList.add('btn-primary', 'activo');
+        filtroActual = btn.dataset.tipo;
+        render();
+      });
+    });
+
+    render();
+  </script>
 </body>
 </html>
