@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="herramienta-title">Herramienta Profesor | AkademiaUniversalis</title>
+  <meta name="description" content="Herramientas del portal profesor de AkademiaUniversalis: planificación, evaluaciones, corrección y gestión de grupos.">
+  <meta name="theme-color" content="#0a0f1a">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <script defer src="../js/auth.js"></script>
+  <script defer src="../js/main.js"></script>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="profesor.html" class="logo">
+        <div class="logo-mark" aria-hidden="true">AU</div>
+        <span>AkademiaUniversalis</span>
+      </a>
+
+      <button class="mobile-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="materias.html">Materias</a>
+        <a href="aula.html">Aula Virtual</a>
+        <a href="rutas.html">Rutas</a>
+        <a href="biblioteca.html">Biblioteca</a>
+        <a href="mapas.html">Mapas</a>
+        <a href="astronomia.html">Astronomía</a>
+        <a href="comunidad.html">Comunidad</a>
+        <a href="logros.html">Logros</a>
+        <a href="profesor.html">Profesor</a>
+        <a href="institucion.html">Institución</a>
+        <a href="precios.html" class="btn-ghost">Precios</a>
+        <a href="auth.html" class="btn-primary" style="margin-left:8px;">Iniciar sesión</a>
+      </nav>
+    </div>
+  </header>
+
+  <section style="padding:90px 0 60px;">
+    <div class="container">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:32px; flex-wrap:wrap; gap:16px;">
+        <a href="profesor.html" class="btn-ghost" style="display:flex; align-items:center; gap:8px;">
+          <span>←</span> Volver al portal profesor
+        </a>
+        <div id="herramienta-badge" style="background:var(--bg2); border:1px solid var(--border); border-radius:8px; padding:8px 16px; font-size:0.9rem; color:var(--muted);">Herramienta</div>
+      </div>
+
+      <div style="background:linear-gradient(135deg, var(--card), rgba(99,102,241,0.08)); border:1px solid var(--border); border-radius:var(--radius); padding:40px 32px; margin-bottom:40px;">
+        <div style="width:56px; height:56px; background:linear-gradient(135deg, var(--accent), var(--accent2)); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:1.8rem; margin-bottom:16px;">👩‍🏫</div>
+        <h1 id="herramienta-nombre" style="font-size:2rem; margin-bottom:12px;">Herramienta</h1>
+        <p id="herramienta-descripcion" style="color:var(--muted); font-size:1.05rem; max-width:600px; margin:0 auto 24px;">Descripción de la herramienta.</p>
+      </div>
+
+      <div id="herramienta-contenido" style="grid-column:1/-1; text-align:center; padding:60px 20px; color:var(--muted);">Cargando herramienta...</div>
+
+      <div style="text-align:center; margin-top:48px;">
+        <a href="aula.html" class="btn-primary">Ir al aula virtual</a>
+        <a href="auth.html" class="btn-outline" style="margin-left:12px;">Registrarme como profesor</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="text-align:center; padding:40px 0;">
+      <p style="color:var(--muted); font-size:0.9rem;">© 2026 AkademiaUniversalis. Universidad virtual.</p>
+    </div>
+  </footer>
+
+  <script>
+    const herramientas = {
+      plan: {
+        nombre: 'Planificación de clases',
+        emoji: '📅',
+        descripcion: 'Crea secuencias de lecciones, asigna materiales y establece fechas de entrega para tus grupos.',
+        detalle: `<ul style="text-align:left; max-width:560px; margin:0 auto; color:var(--muted); line-height:1.7;">
+          <li>Arrastrar y soltar lecciones en un calendario semanal.</li>
+          <li>Vincular materiales de la biblioteca a cada sesión.</li>
+          <li>Establecer fechas de entrega y recordatorios automáticos.</li>
+          <li>Exportar el plan a PDF para compartir con estudiantes.</li>
+        </ul>`
+      },
+      evaluacion: {
+        nombre: 'Evaluaciones con IA',
+        emoji: '📝',
+        descripcion: 'Genera cuestionarios, exámenes y ejercicios personalizados por materia y nivel con asistencia de IA.',
+        detalle: `<ul style="text-align:left; max-width:560px; margin:0 auto; color:var(--muted); line-height:1.7;">
+          <li>Generar preguntas por tema, nivel y cantidad.</li>
+          <li>Tipos: múltiple choice, verdadero/falso, respuesta abierta.</li>
+          <li>Asignar puntuación y tiempo límite por pregunta.</li>
+          <li>Duplicar y reutilizar evaluaciones entre grupos.</li>
+        </ul>`
+      },
+      correccion: {
+        nombre: 'Corrección asistida',
+        emoji: '✏️',
+        descripcion: 'La IA revisa respuestas abiertas y sugiere calificaciones basadas en rúbricas que tú defines.',
+        detalle: `<ul style="text-align:left; max-width:560px; margin:0 auto; color:var(--muted); line-height:1.7;">
+          <li>Subir entregas de estudiantes (texto o archivo).</li>
+          <li>Definir rúbricas de calificación por criterio.</li>
+          <li>La IA sugiere nota y comentarios fundamentados.</li>
+          <li>Tú validas o ajustas la calificación final.</li>
+        </ul>`
+      },
+      grupo: {
+        nombre: 'Gestión de grupos',
+        emoji: '👥',
+        descripcion: 'Crea grupos de estudiantes, asigna rutas de aprendizaje y sigue el progreso de cada uno en tiempo real.',
+        detalle: `<ul style="text-align:left; max-width:560px; margin:0 auto; color:var(--muted); line-height:1.7;">
+          <li>Crear y nombrar grupos de estudiantes.</li>
+          <li>Asignar rutas de aprendizaje a cada grupo.</li>
+          <li>Ver progreso individual y grupal en tablero.</li>
+          <li>Exportar reporte de desempeño a CSV.</li>
+        </ul>`
+      }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const clave = params.get('herramienta');
+    const h = herramientas[clave];
+
+    const badge = document.getElementById('herramienta-badge');
+    const nombre = document.getElementById('herramienta-nombre');
+    const desc = document.getElementById('herramienta-descripcion');
+    const contenido = document.getElementById('herramienta-contenido');
+    const title = document.getElementById('herramienta-title');
+
+    if (!h) {
+      if (nombre) nombre.textContent = 'Herramienta no encontrada';
+      if (desc) desc.textContent = 'La herramienta solicitada no existe.';
+      if (contenido) contenido.innerHTML = '<div style="text-align:center; color:var(--muted); padding:40px 20px;">Herramienta no disponible.</div>';
+      if (badge) { badge.textContent = 'Error'; badge.style.borderColor = 'var(--red)'; }
+      if (title) title.textContent = 'Herramienta no encontrada | AkademiaUniversalis';
+    } else {
+      if (badge) { badge.textContent = h.nombre; badge.style.color = 'var(--text)'; }
+      if (nombre) nombre.textContent = h.nombre;
+      if (desc) desc.textContent = h.descripcion;
+      if (contenido) {
+        contenido.innerHTML = `
+          <div style="width:64px; height:64px; background:linear-gradient(135deg, var(--accent), var(--accent2)); border-radius:16px; display:flex; align-items:center; justify-content:center; font-size:2rem; margin:0 auto 20px;">${h.emoji}</div>
+          ${h.detalle}
+          <div style="margin-top:32px;">
+            <a href="aula.html" class="btn-primary" style="padding:12px 28px;">Probar en el aula virtual</a>
+          </div>
+        `;
+      }
+      if (title) title.textContent = h.nombre + ' | AkademiaUniversalis';
+    }
+  </script>
+</body>
+</html>
