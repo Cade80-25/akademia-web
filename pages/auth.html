@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión | AkademiaUniversalis</title>
+  <meta name="description" content="Inicia sesión en AkademiaUniversalis para acceder al aula virtual, materias, biblioteca y certificados.">
+  <meta name="theme-color" content="#0a0f1a">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <script defer src="../js/main.js"></script>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-mark" aria-hidden="true">AU</div>
+        <span>AkademiaUniversalis</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html" class="btn-ghost">Volver al inicio</a>
+      </nav>
+    </div>
+  </header>
+
+  <section style="padding:100px 0 60px;">
+    <div class="container">
+      <div style="max-width:420px; margin:0 auto;">
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:40px;">
+          <div style="text-align:center; margin-bottom:32px;">
+            <div style="width:48px; height:48px; background:linear-gradient(135deg, var(--accent), var(--accent2)); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.75rem; margin:0 auto 16px;">AU</div>
+            <h2 style="margin-bottom:8px;">Iniciar sesión</h2>
+            <p style="color:var(--muted); font-size:0.9rem;">Accede a tu cuenta de AkademiaUniversalis</p>
+          </div>
+
+          <form id="login-form" style="display:flex; flex-direction:column; gap:16px;">
+            <div>
+              <label style="display:block; font-size:0.9rem; color:var(--muted); margin-bottom:6px;">Correo electrónico</label>
+              <input type="email" name="email" required placeholder="tucorreo@ejemplo.com" style="width:100%; padding:12px 16px; border-radius:8px; border:1px solid var(--border); background:var(--bg2); color:var(--text); font-size:1rem;">
+            </div>
+            <div>
+              <label style="display:block; font-size:0.9rem; color:var(--muted); margin-bottom:6px;">Contraseña</label>
+              <input type="password" name="password" required placeholder="••••••••" style="width:100%; padding:12px 16px; border-radius:8px; border:1px solid var(--border); background:var(--bg2); color:var(--text); font-size:1rem;">
+            </div>
+            <label style="display:flex; align-items:center; gap:8px; font-size:0.9rem; color:var(--muted); cursor:pointer;">
+              <input type="checkbox" style="accent-color:var(--accent);"> Recordarme
+            </label>
+            <a href="#" style="font-size:0.9rem; color:var(--accent); align-self:flex-end;">¿Olvidaste tu contraseña?</a>
+            <button type="submit" class="btn-primary" style="margin-top:8px; width:100%; padding:12px;">Iniciar sesión</button>
+          </form>
+
+          <div style="margin-top:28px; text-align:center;">
+            <p style="color:var(--muted); font-size:0.9rem; margin-bottom:16px;">¿No tienes cuenta?</p>
+            <a href="#" class="btn-outline" style="width:100%; padding:12px;">Crear cuenta gratis</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="text-align:center; padding:40px 0;">
+      <p style="color:var(--muted); font-size:0.9rem;">© 2026 AkademiaUniversalis. Universidad virtual.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

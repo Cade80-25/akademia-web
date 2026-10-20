@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula Virtual | AkademiaUniversalis</title>
+  <meta name="description" content="Aula virtual en vivo con tutores IA adaptativos, voz, pizarra interactiva y contenido multimedia.">
+  <meta name="theme-color" content="#0a0f1a">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <script defer src="../js/main.js"></script>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-mark" aria-hidden="true">AU</div>
+        <span>AkademiaUniversalis</span>
+      </a>
+
+      <button class="mobile-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="materias.html">Materias</a>
+        <a href="aula.html" class="active">Aula Virtual</a>
+        <a href="rutas.html">Rutas</a>
+        <a href="biblioteca.html">Biblioteca</a>
+        <a href="mapas.html">Mapas</a>
+        <a href="astronomia.html">Astronomía</a>
+        <a href="comunidad.html">Comunidad</a>
+        <a href="logros.html">Logros</a>
+        <a href="profesor.html">Profesor</a>
+        <a href="institucion.html">Institución</a>
+        <a href="precios.html" class="btn-ghost">Precios</a>
+        <a href="auth.html" class="btn-primary" style="margin-left:8px;">Iniciar sesión</a>
+      </nav>
+    </div>
+  </header>
+
+  <section style="padding:90px 0 60px;">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2>Aula Virtual en Vivo</h2>
+        <p>Sesiones interactivas con tutores de IA adaptativos. Voz, pizarra y contenido multimedia en tiempo real.</p>
+      </div>
+
+      <!-- Próxima sesión -->
+      <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:32px; margin-bottom:40px;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:24px; flex-wrap:wrap;">
+          <div>
+            <h3 style="font-size:1.5rem; margin-bottom:8px;">Próxima sesión: Física Clásica</h3>
+            <p style="color:var(--muted); margin-bottom:16px;">Con tutora IA: <span style="color:var(--accent); font-weight:600;">Marie Curie (simulada)</span></p>
+            <div style="display:flex; gap:16px; flex-wrap:wrap;">
+              <span style="background:rgba(99,102,241,0.1); color:var(--accent); padding:6px 12px; border-radius:6px; font-size:0.85rem; font-weight:600;">Mañana 10:00 UY</span>
+              <span style="background:rgba(16,185,129,0.1); color:var(--green); padding:6px 12px; border-radius:6px; font-size:0.85rem; font-weight:600;">60 min</span>
+              <span style="background:rgba(245,158,11,0.1); color:var(--gold); padding:6px 12px; border-radius:6px; font-size:0.85rem; font-weight:600;">Nivel: Intermedio</span>
+            </div>
+          </div>
+          <div style="text-align:right;">
+            <button class="btn-primary" style="padding:14px 28px;">Unirme a la sesión</button>
+            <button class="btn-outline" style="padding:14px 28px; margin-top:12px;">Añadir a mi calendario</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sesiones recientes -->
+      <div class="section-header text-center" style="margin-bottom:24px;">
+        <h2>Sesiones recientes</h2>
+        <p style="color:var(--muted);">Revisa lo que ya aprendiste y continúa donde lo dejaste.</p>
+      </div>
+      <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap:20px;">
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:24px;">
+          <div style="font-size:0.85rem; color:var(--muted); margin-bottom:8px;">Matemáticas · ÁLgebra</div>
+          <h3 style="margin-bottom:8px;">Ecuaciones cuadráticas</h3>
+          <p style="color:var(--muted); font-size:0.9rem; margin-bottom:16px;">Resolución por fórmula y factorización.</p>
+          <div style="display:flex; gap:8px;">
+            <button class="btn-outline" style="flex:1; padding:8px 12px; font-size:0.85rem;">Reanudar</button>
+            <button class="btn-ghost" style="flex:1; padding:8px 12px; font-size:0.85rem;">Detalles</button>
+          </div>
+        </div>
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:24px;">
+          <div style="font-size:0.85rem; color:var(--muted); margin-bottom:8px;">Historia · Edad Media</div>
+          <h3 style="margin-bottom:8px;">El feudalismo europeo</h3>
+          <p style="color:var(--muted); font-size:0.9rem; margin-bottom:16px;">Señoríos, vasallaje y organización social.</p>
+          <div style="display:flex; gap:8px;">
+            <button class="btn-outline" style="flex:1; padding:8px 12px; font-size:0.85rem;">Reanudar</button>
+            <button class="btn-ghost" style="flex:1; padding:8px 12px; font-size:0.85rem;">Detalles</button>
+          </div>
+        </div>
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:24px;">
+          <div style="font-size:0.85rem; color:var(--muted); margin-bottom:8px;">Programación · Python</div>
+          <h3 style="margin-bottom:8px;">Estructuras de datos</h3>
+          <p style="color:var(--muted); font-size:0.9rem; margin-bottom:16px;">Listas, diccionarios, tuplas y sets.</p>
+          <div style="display:flex; gap:8px;">
+            <button class="btn-outline" style="flex:1; padding:8px 12px; font-size:0.85rem;">Reanudar</button>
+            <button class="btn-ghost" style="flex:1; padding:8px 12px; font-size:0.85rem;">Detalles</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Características del aula -->
+      <div class="section-header text-center" style="margin:60px 0 32px;">
+        <h2>¿Qué encontrarás en el aula?</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon">🎤</div>
+          <h3>Voz en tiempo real</h3>
+          <p>Conversa con tu tutor IA como si estuviera a tu lado. Preguntas, respuestas y explicaciones orales instantáneas.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">🖊️</div>
+          <h3>Pizarra interactiva</h3>
+          <p>Dibuja, escribe y resuelve ejercicios en tiempo real. Tu tutor puede mostrar diagramas y anotaciones mientras enseña.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">📺</div>
+          <h3>Contenido multimedia</h3>
+          <p>Videos, imágenes, simulaciones y modelos 3D integrados directamente en la sesión de clase.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">🤖</div>
+          <h3>IA adaptativa</h3>
+          <p>El tutor ajusta la dificultad y el ritmo según tu progreso. Nunca te aburres ni te sientes perdido.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="text-align:center; padding:40px 0;">
+      <p style="color:var(--muted); font-size:0.9rem;">© 2026 AkademiaUniversalis. Universidad virtual.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

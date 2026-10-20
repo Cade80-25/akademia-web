@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Materias | AkademiaUniversalis</title>
+  <meta name="description" content="Catálogo de 37 disciplinas en 7 categorías de AkademiaUniversalis. Explora ciencia, tecnología, humanidades, artes, idiomas y más.">
+  <meta name="theme-color" content="#0a0f1a">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <script defer src="../js/main.js"></script>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-mark" aria-hidden="true">AU</div>
+        <span>AkademiaUniversalis</span>
+      </a>
+
+      <button class="mobile-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="materias.html" class="active">Materias</a>
+        <a href="aula.html">Aula Virtual</a>
+        <a href="rutas.html">Rutas</a>
+        <a href="biblioteca.html">Biblioteca</a>
+        <a href="mapas.html">Mapas</a>
+        <a href="astronomia.html">Astronomía</a>
+        <a href="comunidad.html">Comunidad</a>
+        <a href="logros.html">Logros</a>
+        <a href="profesor.html">Profesor</a>
+        <a href="institucion.html">Institución</a>
+        <a href="precios.html" class="btn-ghost">Precios</a>
+        <a href="auth.html" class="btn-primary" style="margin-left:8px;">Iniciar sesión</a>
+      </nav>
+    </div>
+  </header>
+
+  <section style="padding:100px 0 60px;">
+    <div class="container">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; margin-bottom:40px;">
+        <div class="section-header" style="text-align:left;">
+          <h2>Catálogo de materias</h2>
+          <p style="margin-top:8px;">37 disciplinas organizadas en 7 categorías. Elige tu área y comienza a aprender.</p>
+        </div>
+        <div style="display:flex; gap:8px;">
+          <input type="text" id="materia-search" placeholder="Buscar materia..." style="padding:10px 16px; border-radius:8px; border:1px solid var(--border); background:var(--bg2); color:var(--text); min-width:220px;">
+          <button class="btn-primary" id="clear-search" style="padding:10px 16px; font-size:0.9rem;">Limpiar</button>
+        </div>
+      </div>
+
+      <div class="categories-grid" id="materias-grid">
+        <!-- Las categorías se inyectan por JS -->
+      </div>
+
+      <div style="text-align:center; margin-top:40px;">
+        <p style="color:var(--muted); font-size:0.9rem;">¿No encuentras lo que buscas? <a href="index.html" style="color:var(--accent);">Volver al inicio</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="text-align:center; padding:40px 0;">
+      <p style="color:var(--muted); font-size:0.9rem;">© 2026 AkademiaUniversalis. Universidad virtual.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Datos de materias: 37 disciplinas en 7 categorías
+    const materias = [
+      {
+        categoria: "Ciencia y Tecnología",
+        icono: "🔬",
+        color: "#3b82f6",
+        disciplinas: [
+          { nombre: "Física", nivel: "Inicial → Universitario", descripcion: "Mecánica, termodinámica, electromagnetismo, óptica y física cuántica." },
+          { nombre: "Química", nivel: "Inicial → Universitario", descripcion: "Estructura atómica, reacciones, estequiometría, química orgánica e inorgánica." },
+          { nombre: "Biología", nivel: "Inicial → Universitario", descripcion: "Celular, genética, ecología, anatomía, fisiología y evolución." },
+          { nombre: "Programación", nivel: "Inicial → Universitario", descripcion: "Python, JavaScript, estructuras de datos, algoritmos y desarrollo web." },
+          { nombre: "Inteligencia Artificial", nivel: "Universitario", descripcion: "Machine learning, redes neuronales, procesamiento de lenguaje natural." },
+          { nombre: "Robótica", nivel: "Universitario", descripcion: "Diseño de robots, sensores, actuadores, control y automatización." },
+          { nombre: "Ciberseguridad", nivel: "Universitario", descripcion: "Protección de sistemas, criptografía, hacking ético y análisis forense." },
+          { nombre: "Ciencia de Datos", nivel: "Universitario", descripcion: "Análisis de datos, visualización, estadística avanzada y big data." }
+        ]
+      },
+      {
+        categoria: "Matemáticas y Lógica",
+        icono: "📊",
+        color: "#10b981",
+        disciplinas: [
+          { nombre: "Aritmética", nivel: "Inicial", descripcion: "Números, operaciones básicas, fracciones, porcentajes y razonamiento numérico." },
+          { nombre: "Álgebra", nivel: "Secundaria", descripcion: "Ecuaciones, funciones, polinomios, sistemas y razonamiento algebraico." },
+          { nombre: "Geometría", nivel: "Secundaria", descripcion: "Figuras, áreas, volúmenes, trigonometría y geometría analítica." },
+          { nombre: "Estadística", nivel: "Universitario", descripcion: "Probabilidad, distribuciones, inferencia y análisis estadístico." },
+          { nombre: "Cálculo", nivel: "Universitario", descripcion: "Límites, derivadas, integrales y cálculo multivariable." },
+          { nombre: "Lógica", nivel: "Secundaria", descripcion: "Razonamiento deductivo, inductivo, falacias y pensamiento crítico." }
+        ]
+      },
+      {
+        categoria: "Humanidades y Artes",
+        icono: "📖",
+        color: "#a855f7",
+        disciplinas: [
+          { nombre: "Historia", nivel: "Secundaria", descripcion: "Civilizaciones, acontecimientos, culturas y evolución de la humanidad." },
+          { nombre: "Filosofía", nivel: "Universitario", descripcion: "Pensadores, ética, metafísica, epistemología y filosofía política." },
+          { nombre: "Literatura", nivel: "Secundaria", descripcion: "Obras clásicas, análisis literario, géneros y teoría literaria." },
+          { nombre: "Música", nivel: "Inicial", descripcion: "Teoría musical, historia de la música, instrumentos y composición." },
+          { nombre: "Pintura", nivel: "Inicial", descripcion: "Técnicas pictóricas, historia del arte, composición y color." },
+          { nombre: "Teatro", nivel: "Secundaria", descripcion: "Actuación, dirección escénica, dramaturgia y puesta en escena." },
+          { nombre: "Arte Digital", nivel: "Universitario", descripcion: "Diseño gráfico, ilustración digital, animación y edición de imagen." }
+        ]
+      },
+      {
+        categoria: "Idiomas y Comunicación",
+        icono: "🌐",
+        color: "#f59e0b",
+        disciplinas: [
+          { nombre: "Español", nivel: "Inicial", descripcion: "Gramática, ortografía, redacción y comprensión lectora en español." },
+          { nombre: "Inglés", nivel: "Inicial", descripcion: "Gramática, vocabulario, conversación y certificación internacional." },
+          { nombre: "Francés", nivel: "Secundaria", descripcion: "Gramática, vocabulario, conversación y cultura francófona." },
+          { nombre: "Alemán", nivel: "Secundaria", descripcion: "Gramática, vocabulario, conversación y cultura germánica." },
+          { nombre: "Chino Mandarín", nivel: "Universitario", descripcion: "Caracteres, pinyin, tonos, conversación y cultura china." },
+          { nombre: "Comunicación", nivel: "Secundaria", descripcion: "Oratoria, comunicación no verbal, medios y redes sociales." }
+        ]
+      },
+      {
+        categoria: "Geografía y Medio Ambiente",
+        icono: "🌍",
+        color: "#14b8a6",
+        disciplinas: [
+          { nombre: "Cartografía", nivel: "Secundaria", descripcion: "Mapas, proyecciones, SIG y representación del territorio." },
+          { nombre: "Ecología", nivel: "Secundaria", descripcion: "Ecosistemas, biodiversidad, cadenas tróficas y conservación." },
+          { nombre: "Clima y Tiempo", nivel: "Secundaria", descripcion: "Atmósfera, fenómenos meteorológicos, cambio climático y pronóstico." },
+          { nombre: "Sostenibilidad", nivel: "Universitario", descripcion: "Desarrollo sostenible, energías renovables, economía circular." }
+        ]
+      },
+      {
+        categoria: "Astronomía y Espacio",
+        icono: "🌌",
+        color: "#6366f1",
+        disciplinas: [
+          { nombre: "Sistema Solar", nivel: "Inicial", descripcion: "Planetas, lunas, asteroides, cometas y el Sol." },
+          { nombre: "Estrellas y Galaxias", nivel: "Secundaria", descripcion: "Evolución estelar, tipos de galaxias, constelaciones y nebulosas." },
+          { nombre: "Exploración Espacial", nivel: "Universitario", descripcion: "Misiones espaciales, satélites, telescopios y conquista del espacio." },
+          { nombre: "Cosmología", nivel: "Universitario", descripcion: "Origen del universo, Big Bang, materia oscura y energía oscura." }
+        ]
+      },
+      {
+        categoria: "Habilidades para la Vida",
+        icono: "🎯",
+        color: "#ef4444",
+        disciplinas: [
+          { nombre: "Educación Financiera", nivel: "Secundaria", descripcion: "Presupuesto, ahorro, inversión, crédito y finanzas personales." },
+          { nombre: "Salud y Bienestar", nivel: "Inicial", descripcion: "Nutrición, actividad física, salud mental y primeros auxilios." },
+          { nombre: "Ciudadanía", nivel: "Secundaria", descripcion: "Derechos humanos, democracia, participación cívica y convivencia." },
+          { nombre: "Pensamiento Crítico", nivel: "Universitario", descripcion: "Análisis de argumentos, sesgos cognitivos y toma de decisiones." }
+        ]
+      }
+    ];
+
+    const grid = document.getElementById('materias-grid');
+    const searchInput = document.getElementById('materia-search');
+    const clearBtn = document.getElementById('clear-search');
+
+    function render(filter = '') {
+      grid.innerHTML = '';
+      let visible = 0;
+
+      materias.forEach(cat => {
+        const disciplinasFiltradas = cat.disciplinas.filter(d =>
+          d.nombre.toLowerCase().includes(filter.toLowerCase()) ||
+          d.descripcion.toLowerCase().includes(filter.toLowerCase()) ||
+          d.nivel.toLowerCase().includes(filter.toLowerCase())
+        );
+
+        if (disciplinasFiltradas.length === 0 && filter !== '') return;
+
+        const catEl = document.createElement('div');
+        catEl.className = 'category-card reveal';
+        catEl.style.borderLeft = `4px solid ${cat.color}`;
+        catEl.innerHTML = `
+          <span class="category-icon">${cat.icono}</span>
+          <h3 style="color:${cat.color}">${cat.categoria}</h3>
+          <p style="font-size:0.85rem; color:var(--muted); margin-bottom:16px;">${disciplinasFiltradas.length} ${disciplinasFiltradas.length === 1 ? 'disciplina' : 'disciplinas'}</p>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            ${disciplinasFiltradas.map(d => `
+              <div style="background:var(--bg2); border:1px solid var(--border); border-radius:10px; padding:12px 16px; cursor:pointer; transition:all 0.2s;" onmouseover="this.style.background='var(--card)'" onmouseout="this.style.background='var(--bg2)'">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <div>
+                    <div style="font-weight:700; color:var(--text);">${d.nombre}</div>
+                    <div style="font-size:0.75rem; color:var(--accent); font-weight:600; margin-top:2px;">${d.nivel}</div>
+                  </div>
+                  <span style="font-size:0.8rem; color:var(--muted);">${d.descripcion}</span>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        `;
+        grid.appendChild(catEl);
+        visible += disciplinasFiltradas.length;
+      });
+
+      if (filter !== '' && visible === 0) {
+        grid.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:60px 20px; color:var(--muted);">No se encontraron materias que coincidan con "${filter}".</div>`;
+      }
+    }
+
+    render();
+
+    searchInput.addEventListener('input', (e) => render(e.target.value));
+    clearBtn.addEventListener('click', () => { searchInput.value = ''; render(); });
+  </script>
+</body>
+</html>

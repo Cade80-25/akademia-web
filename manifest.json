@@ -1,0 +1,23 @@
+{
+  "name": "AkademiaUniversalis",
+  "short_name": "Akademia",
+  "description": "Universidad virtual con el eje en el aprendizaje. 37 disciplinas, tutores IA, aula en vivo, biblioteca, mapas y astronomía.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#0a0f1a",
+  "theme_color": "#0a0f1a",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "apple-touch-icon.svg",
+      "sizes": "180x180",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "favicon.svg",
+      "sizes": "32x32",
+      "type": "image/svg+xml"
+    }
+  ]
+}

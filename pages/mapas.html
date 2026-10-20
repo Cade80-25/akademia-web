@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapas | AkademiaUniversalis</title>
+  <meta name="description" content="40+ mapas interactivos de AkademiaUniversalis: geografía, historia, astronomía y exploración del mundo.">
+  <meta name="theme-color" content="#0a0f1a">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <script defer src="../js/main.js"></script>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-mark" aria-hidden="true">AU</div>
+        <span>AkademiaUniversalis</span>
+      </a>
+
+      <button class="mobile-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="materias.html">Materias</a>
+        <a href="aula.html">Aula Virtual</a>
+        <a href="rutas.html">Rutas</a>
+        <a href="biblioteca.html">Biblioteca</a>
+        <a href="mapas.html" class="active">Mapas</a>
+        <a href="astronomia.html">Astronomía</a>
+        <a href="comunidad.html">Comunidad</a>
+        <a href="logros.html">Logros</a>
+        <a href="profesor.html">Profesor</a>
+        <a href="institucion.html">Institución</a>
+        <a href="precios.html" class="btn-ghost">Precios</a>
+        <a href="auth.html" class="btn-primary" style="margin-left:8px;">Iniciar sesión</a>
+      </nav>
+    </div>
+  </header>
+
+  <section style="padding:90px 0 60px;">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2>Mapas Interactivos</h2>
+        <p>40+ mapas para explorar el mundo, la historia y el espacio. Navega, haz zoom y descubre cada rincón del planeta y más allá.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap:24px;">
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:28px; text-align:center;">
+          <div style="width:64px; height:64px; background:linear-gradient(135deg, var(--accent), var(--accent2)); border-radius:16px; display:flex; align-items:center; justify-content:center; font-size:2rem; margin:0 auto 20px;">🗺️</div>
+          <h3 style="margin-bottom:12px;">Mapa Mundial</h3>
+          <p style="color:var(--muted); font-size:0.95rem; margin-bottom:20px;">Países, capitales, fronteras y datos demográficos de todo el planeta.</p>
+          <button class="btn-primary" style="padding:10px 20px;">Explorar mapa</button>
+        </div>
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:28px; text-align:center;">
+          <div style="width:64px; height:64px; background:linear-gradient(135deg, var(--gold), #fbbf24); border-radius:16px; display:flex; align-items:center; justify-content:center; font-size:2rem; margin:0 auto 20px;">🏛️</div>
+          <h3 style="margin-bottom:12px;">Mapa Histórico</h3>
+          <p style="color:var(--muted); font-size:0.95rem; margin-bottom:20px;">Imperios, civilizaciones y cambios territoriales a través de los siglos.</p>
+          <button class="btn-primary" style="padding:10px 20px;">Explorar mapa</button>
+        </div>
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:28px; text-align:center;">
+          <div style="width:64px; height:64px; background:linear-gradient(135deg, var(--green), #34d399); border-radius:16px; display:flex; align-items:center; justify-content:center; font-size:2rem; margin:0 auto 20px;">🌍</div>
+          <h3 style="margin-bottom:12px;">Clima y Tiempo</h3>
+          <p style="color:var(--muted); font-size:0.95rem; margin-bottom:20px;">Zonas climáticas, corrientes oceánicas y patrones meteorológicos globales.</p>
+          <button class="btn-primary" style="padding:10px 20px;">Explorar mapa</button>
+        </div>
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:28px; text-align:center;">
+          <div style="width:64px; height:64px; background:linear-gradient(135deg, var(--accent2), #c084fc); border-radius:16px; display:flex; align-items:center; justify-content:center; font-size:2rem; margin:0 auto 20px;">🪐</div>
+          <h3 style="margin-bottom:12px;">Mapa Celeste</h3>
+          <p style="color:var(--muted); font-size:0.95rem; margin-bottom:20px;">Constelaciones, estrellas visibles y coordenadas celestes desde la Tierra.</p>
+          <button class="btn-primary" style="padding:10px 20px;">Explorar mapa</button>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:48px;">
+        <p style="color:var(--muted); font-size:0.9rem;">¿Prefieres explorar el espacio en 3D? <a href="astronomia.html" style="color:var(--accent); font-weight:600;">Ve al planetario</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="text-align:center; padding:40px 0;">
+      <p style="color:var(--muted); font-size:0.9rem;">© 2026 AkademiaUniversalis. Universidad virtual.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

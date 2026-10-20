@@ -1,128 +1,308 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XD5DR30JQ5"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XD5DR30JQ5');
-    </script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <!-- Content Security Policy: restringe orígenes para reducir riesgos de XSS -->
-    <meta http-equiv="Content-Security-Policy" content="
-      default-src 'self';
-      base-uri 'self';
-      object-src 'none';
-      
-      form-action 'self' https://www.paypal.com https://www.sandbox.paypal.com;
-      script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: https://www.googletagmanager.com https://www.google-analytics.com https://www.paypal.com https://www.sandbox.paypal.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://ipapi.co;
-      script-src-elem 'self' 'unsafe-inline' blob: https://www.googletagmanager.com https://www.google-analytics.com https://www.paypal.com https://www.sandbox.paypal.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;
-      worker-src 'self' blob:;
-      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net;
-      style-src-elem 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net;
-      font-src 'self' data: https://fonts.gstatic.com https://fonts.googleapis.com https://cdn.jsdelivr.net;
-      img-src 'self' data: blob: https: http://www.w3.org;
-      media-src 'self' data: blob: https:;
-      connect-src 'self' blob: https://silgzccdbqjqkcwpmpao.supabase.co wss://silgzccdbqjqkcwpmpao.supabase.co https://api.elevenlabs.io https://api.openai.com https://www.googletagmanager.com https://www.google-analytics.com https://*.analytics.google.com https://*.google-analytics.com https://geocoding-api.open-meteo.com https://commons.wikimedia.org https://upload.wikimedia.org https://maps.wikimedia.org https://*.tile.openstreetmap.org https://tile.openstreetmap.org https://*.opentopomap.org https://opentopomap.org https://*.cyclosm.org https://www.cyclosm.org https://www.hotosm.org https://www.openrailwaymap.org https://www.openstreetmap.org https://storage.googleapis.com https://www.solarsystemscope.com https://www.paypal.com https://www.sandbox.paypal.com https://api.paypal.com https://ipapi.co;
-      frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://www.paypal.com https://www.sandbox.paypal.com;
-      manifest-src 'self';
-      upgrade-insecure-requests;
-    " />
-    <title>Academia Universal - Centro Educativo Virtual con Tutores IA</title>
-    <meta name="description" content="Centro educativo virtual con tutores IA adaptativos. Más de 30 materias para todos los niveles educativos. Aprende a tu ritmo con inteligencia artificial.">
-    <meta name="author" content="Academia Universal" />
-    <meta name="msvalidate.01" content="43091B1740E31D04C4467E0F70D0B706" />
-    <meta name="yandex-verification" content="ef90b24cf6cfd21f" />
-    <meta name="google-site-verification" content="Pux0QINfQp-iMYpX5_q8qhuA4lTtdEdfGOXMFR5G3T4" />
-    <meta name="theme-color" content="#0a0a1a" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="Academia" />
-    <link rel="apple-touch-icon" href="/pwa-icon-192.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/pwa-icon-192.png" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://silgzccdbqjqkcwpmpao.supabase.co" />
-    <link rel="canonical" href="https://akademiauniversalis.com/" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AkademiaUniversalis | Universidad virtual, aprendizaje sin límites</title>
+  <meta name="description" content="AkademiaUniversalis: centro educativo virtual con tutores IA adaptativos. 37 disciplinas, 70+ tutores, aula en vivo, biblioteca, mapas y astronomía. Pago único, sin suscripciones.">
+  <meta name="theme-color" content="#0a0f1a">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="AkademiaUniversalis">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.svg">
+  <script defer src="js/main.js"></script>
+</head>
+<body>
 
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://akademiauniversalis.com/" />
-    <meta property="og:site_name" content="Academia Universal" />
-    <meta property="og:image" content="https://akademiauniversalis.com/og-image.jpg">
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:title" content="Academia Universal - Centro Educativo Virtual con Tutores IA">
-    <meta property="og:description" content="Explora más de 30 disciplinas con tutores IA que se adaptan a tu nivel. Desde la antigüedad hasta la era digital.">
-    <meta property="og:locale" content="es_ES" />
-    <meta property="og:locale:alternate" content="en_US" />
-    <meta property="og:locale:alternate" content="pt_BR" />
+  <!-- Header / Navegación -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo" aria-label="Ir al inicio">
+        <div class="logo-mark" aria-hidden="true">AU</div>
+        <span>AkademiaUniversalis</span>
+      </a>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@AcademiaUniversal" />
-    <meta name="twitter:image" content="https://akademiauniversalis.com/og-image.jpg">
-    <meta name="twitter:title" content="Academia Universal - Centro Educativo Virtual con Tutores IA">
-    <meta name="twitter:description" content="Explora más de 30 disciplinas con tutores IA que se adaptan a tu nivel. Desde la antigüedad hasta la era digital.">
+      <button class="mobile-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
 
-    <!-- Structured data: Educational Organization + Course catalog for rich snippets and AI search -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "EducationalOrganization",
-      "name": "Academia Universal",
-      "alternateName": "Akademia Universalis",
-      "url": "https://akademiauniversalis.com",
-      "logo": "https://akademiauniversalis.com/pwa-icon-192.png",
-      "description": "Centro educativo virtual con tutores IA adaptativos. Más de 37 disciplinas, simulaciones 3D, atlas, certificados verificables y acceso de por vida.",
-      "sameAs": [],
-      "areaServed": "Worldwide",
-      "inLanguage": ["es", "en", "pt"],
-      "offers": {
-        "@type": "Offer",
-        "category": "Lifetime access",
-        "price": "10",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://akademiauniversalis.com/precios"
-      }
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Course",
-      "name": "Catálogo Academia Universal: 37 disciplinas",
-      "description": "Aula virtual con tutores IA en matemáticas, ciencias, humanidades, artes, idiomas, tecnología y disciplinas técnicas. Adaptado de 3 a 99 años.",
-      "provider": {
-        "@type": "EducationalOrganization",
-        "name": "Academia Universal",
-        "sameAs": "https://akademiauniversalis.com"
-      },
-      "inLanguage": ["es", "en", "pt"],
-      "educationalLevel": "Inicial, Primaria, Media, Universitaria, Técnica",
-      "hasCourseInstance": {
-        "@type": "CourseInstance",
-        "courseMode": "Online",
-        "courseWorkload": "PT1H"
-      },
-      "offers": {
-        "@type": "Offer",
-        "category": "Lifetime",
-        "price": "10",
-        "priceCurrency": "USD",
-        "url": "https://akademiauniversalis.com/precios"
-      }
-    }
-    </script>
-    <script type="module" crossorigin src="/assets/index-hfm3eGvV.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/vendor-react-D9qRVFlT.js">
-    <link rel="modulepreload" crossorigin href="/assets/vendor-mermaid-CMKCYLRq.js">
-    <link rel="modulepreload" crossorigin href="/assets/vendor-charts-bJ_Mv4iN.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-BJQzKdcL.css">
-  <link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
+      <nav class="nav-links">
+        <a href="index.html" class="active">Inicio</a>
+        <a href="pages/materias.html">Materias</a>
+        <a href="pages/aula.html">Aula Virtual</a>
+        <a href="pages/rutas.html">Rutas de Aprendizaje</a>
+        <a href="pages/biblioteca.html">Biblioteca</a>
+        <a href="pages/mapas.html">Mapas</a>
+        <a href="pages/astronomia.html">Astronomía</a>
+        <a href="pages/comunidad.html">Comunidad</a>
+        <a href="pages/logros.html">Logros</a>
+        <a href="pages/profesor.html">Profesor</a>
+        <a href="pages/institucion.html">Institución</a>
+        <a href="pages/precios.html" class="btn-ghost">Precios</a>
+        <a href="pages/auth.html" class="btn-primary" style="margin-left:8px;">Iniciar sesión</a>
+      </nav>
+    </div>
+  </header>
 
-  <body>
-    <div id="root"></div>
-  </body>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">🚀 Nueva plataforma en camino</div>
+          <h1>La universidad virtual<br><span>donde el aprendizaje cobra vida</span></h1>
+          <p>AkademiaUniversalis es un centro educativo virtual con tutores de IA adaptativos, aula en vivo, biblioteca digital, mapas interactivos y planetario. Diseñado para que el alumno disfrute aprendiendo y el profesor enseñe con herramientas útiles.</p>
+          <div class="hero-actions">
+            <a href="pages/materias.html" class="btn-primary">Explorar materias</a>
+            <a href="pages/aula.html" class="btn-outline">Ver el aula virtual</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="visual-card">
+            <div class="visual-placeholder">
+              <span class="visual-badge">EN VIVO</span>
+              <svg width="200" height="200" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <p style="margin-top:24px; color:#64748b;">Aula Virtual — Próxima sesión en vivo</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Características -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <h2>Todo lo que necesitas para aprender</h2>
+        <p>Una plataforma completa pensada para el estudiante y el profesor, con el eje puesto en el aprendizaje real.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon">🎓</div>
+          <h3>37 disciplinas</h3>
+          <p>Desde inicial (3-5 años) hasta universitario y técnico. 7 categorías que cubren ciencia, arte, tecnología, humanidades y más.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">🤖</div>
+          <h3>70+ tutores IA</h3>
+          <p>Figuras históricas y técnicas adaptadas a cada materia: Sócrates, Hipatia, Comenio, Curie, Einstein, Turing y muchos más.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">📺</div>
+          <h3>Aula en vivo</h3>
+          <p>Sesiones con voz, pizarra interactiva y contenido multimedia. Aprende en tiempo real con tu tutor IA.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">🗺️</div>
+          <h3>Mapas y Astronomía</h3>
+          <p>40+ mapas interactivos, planetario, Sistema Solar en 3D y catálogo Messier para explorar el universo.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">📚</div>
+          <h3>Biblioteca digital</h3>
+          <p>Sesiones pasadas, PDFs y materiales personales siempre disponibles para consultar cuando quieras.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">🏆</div>
+          <h3>Logros y certificados</h3>
+          <p>17 insignias por hitos y certificados PDF verificables (AU-CERT-XXXX) que acreditan tu aprendizaje.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categorías -->
+  <section class="stats">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2>Categorías de estudio</h2>
+        <p>Elige tu área y avanza a tu ritmo con rutas personalizadas.</p>
+      </div>
+      <div class="categories-grid">
+        <div class="category-card reveal">
+          <span class="category-icon">🔬</span>
+          <h3>Ciencia y Tecnología</h3>
+          <p>Física, química, biología, programación, IA, robótica.</p>
+          <span class="category-disciplines">8 disciplinas</span>
+        </div>
+        <div class="category-card reveal">
+          <span class="category-icon">📊</span>
+          <h3>Matemáticas y Lógica</h3>
+          <p>Aritmética, álgebra, geometría, estadística, cálculo.</p>
+          <span class="category-disciplines">6 disciplinas</span>
+        </div>
+        <div class="category-card reveal">
+          <span class="category-icon">📖</span>
+          <h3>Humanidades y Artes</h3>
+          <p>Historia, filosofía, literatura, música, pintura, teatro.</p>
+          <span class="category-disciplines">7 disciplinas</span>
+        </div>
+        <div class="category-card reveal">
+          <span class="category-icon">�ía</span>
+          <h3>Idiomas y Comunicación</h3>
+          <p>Español, inglés, francés, alemán, chino, comunicación.</p>
+          <span class="category-disciplines">5 disciplinas</span>
+        </div>
+        <div class="category-card reveal">
+          <span class="category-icon">🌍</span>
+          <h3>Geografía y Medio Ambiente</h3>
+          <p>Cartografía, ecología, clima, sostenibilidad, mapas.</p>
+          <span class="category-disciplines">4 disciplinas</span>
+        </div>
+        <div class="category-card reveal">
+          <span class="category-icon">🌌</span>
+          <h3>Astronomía y Espacio</h3>
+          <p>Sistema Solar, estrellas, galaxias, exploración espacial.</p>
+          <span class="category-disciplines">4 disciplinas</span>
+        </div>
+        <div class="category-card reveal">
+          <span class="category-icon">🎯</span>
+          <h3>Habilidades para la Vida</h3>
+          <p>Educación financiera, salud, ciudadanía, pensamiento crítico.</p>
+          <span class="category-disciplines">3 disciplinas</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Estadísticas -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal">
+          <h3 data-target="37">0</h3>
+          <p>Disciplinas disponibles</p>
+        </div>
+        <div class="stat-item reveal">
+          <h3 data-target="70">0</h3>
+          <p>Tutores de IA adaptativos</p>
+        </div>
+        <div class="stat-item reveal">
+          <h3 data-target="40">0</h3>
+          <p>Mapas interactivos</p>
+        </div>
+        <div class="stat-item reveal">
+          <h3 data-target="17">0</h3>
+          <p>Insignias de logro</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Precios -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <h2>Precios simples, sin sorpresas</h2>
+        <p>Pago único. Sin suscripciones. Acceso de por vida a la plataforma.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card reveal">
+          <h3>Estudiante</h3>
+          <div class="subtitle">Acceso completo a materias y aula</div>
+          <div class="price">10<span>USD</span></div>
+          <ul>
+            <li>Todas las 37 disciplinas</li>
+            <li>Aula virtual en vivo</li>
+            <li>Biblioteca digital</li>
+            <li>Mapas y astronomía</li>
+            <li>Certificados verificables</li>
+          </ul>
+          <div class="pricing-actions">
+            <a href="pages/auth.html" class="btn-outline">Inscribirme</a>
+          </div>
+        </div>
+        <div class="pricing-card featured reveal">
+          <h3>Profesor</h3>
+          <div class="subtitle">Herramientas para enseñar y evaluar</div>
+          <div class="price">12<span>USD</span></div>
+          <ul>
+            <li>Todo lo de Estudiante</li>
+            <li>Portal profesor</li>
+            <li>Creación de grupos y tareas</li>
+            <li>Evaluaciones con IA</li>
+            <li>Corrección asistida</li>
+          </ul>
+          <div class="pricing-actions">
+            <a href="pages/profesor.html" class="btn-outline">Acceder</a>
+          </div>
+        </div>
+        <div class="pricing-card reveal">
+          <h3>Dual</h3>
+          <div class="subtitle">Estudiante + Profesor</div>
+          <div class="price">18<span>USD</span></div>
+          <ul>
+            <li>Todo lo de Estudiante</li>
+            <li>Todo lo de Profesor</li>
+            <li>Acceso completo ilimitado</li>
+            <li>Institución con código INV</li>
+            <li>Soporte prioritario</li>
+          </ul>
+          <div class="pricing-actions">
+            <a href="pages/institucion.html" class="btn-outline">Solicitar acceso</a>
+          </div>
+        </div>
+      </div>
+      <p style="text-align:center; margin-top:32px; color:var(--muted); font-size:0.9rem;">Pago único mediante PayPal. No hay suscripciones ni cargos ocultos.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>¿Listo para empezar a aprender?</h2>
+    <p>Únete a miles de estudiantes y profesores que ya transformaron su forma de aprender con AkademiaUniversalis.</p>
+    <div class="hero-actions" style="justify-content:center;">
+      <a href="pages/auth.html" class="btn-primary">Crear mi cuenta gratis</a>
+      <a href="pages/materias.html" class="btn-outline">Ver catálogo de materias</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>AkademiaUniversalis</h4>
+          <p style="color:var(--muted); font-size:0.85rem; margin-top:8px;">Universidad virtual con el eje en el aprendizaje.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Plataforma</h4>
+          <ul>
+            <li><a href="pages/materias.html">Materias</a></li>
+            <li><a href="pages/aula.html">Aula Virtual</a></li>
+            <li><a href="pages/biblioteca.html">Biblioteca</a></li>
+            <li><a href="pages/mapas.html">Mapas</a></li>
+            <li><a href="pages/astronomia.html">Astronomía</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Comunidad</h4>
+          <ul>
+            <li><a href="pages/comunidad.html">Foros y grupos</a></li>
+            <li><a href="pages/logros.html">Logros y certificados</a></li>
+            <li><a href="pages/profesor.html">Portal profesor</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Información</h4>
+          <ul>
+            <li><a href="pages/precios.html">Precios</a></li>
+            <li><a href="pages/institucion.html">Institución</a></li>
+            <li><a href="pages/auth.html">Iniciar sesión</a></li>
+          </ul>
+        </div>
+      </div>
+      <p style="color:var(--muted); font-size:0.8rem;">© 2026 AkademiaUniversalis. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+</body>
 </html>
