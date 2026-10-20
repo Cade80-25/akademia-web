@@ -50,25 +50,18 @@
         <p>Gana insignias por tus hitos de aprendizaje y obtén certificados PDF verificables que acreditan tu conocimiento.</p>
       </div>
 
-      <div style="display:flex; gap:16px; margin-bottom:32px; flex-wrap:wrap;">
-        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:20px 28px; flex:1; min-width:140px; text-align:center;">
-          <div style="font-size:2rem; font-weight:800; color:var(--accent);" id="logros-contador">0</div>
-          <div style="color:var(--muted); font-size:0.85rem;">Insignias obtenidas</div>
-        </div>
-        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:20px 28px; flex:1; min-width:140px; text-align:center;">
-          <div style="font-size:2rem; font-weight:800; color:var(--gold);" id="logros-total">/ 17</div>
-          <div style="color:var(--muted); font-size:0.85rem;">Insignias disponibles</div>
-        </div>
-        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:20px 28px; flex:1; min-width:140px; text-align:center;">
-          <div style="font-size:2rem; font-weight:800; color:var(--accent2);" id="logros-nivel">Nivel 1</div>
-          <div style="color:var(--muted); font-size:0.85rem;">Tu nivel actual</div>
-        </div>
-      </div>
-
       <div style="margin-bottom:40px;">
-        <h3 style="font-size:1.25rem; margin-bottom:16px;">Tus insignias</h3>
-        <p style="color:var(--muted); font-size:0.85rem; margin-bottom:16px;">Las insignias se desbloquean automáticamente al completar lecciones y rutas en el aula virtual.</p>
-        <div style="display:flex; gap:12px; flex-wrap:wrap;" id="logros-grid"></div>
+        <h3 style="font-size:1.25rem; margin-bottom:16px;">Tus insignias (17 disponibles)</h3>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <div style="width:64px; height:64px; border-radius:12px; background:linear-gradient(135deg, var(--gold), #fbbf24); display:flex; align-items:center; justify-content:center; font-size:1.75rem; border:2px solid #fff; box-shadow:0 4px 12px rgba(245,158,11,0.4);">🏆</div>
+          <div style="width:64px; height:64px; border-radius:12px; background:rgba(99,102,241,0.2); border:1px solid rgba(99,102,241,0.3); display:flex; align-items:center; justify-content:center; font-size:1.75rem; color:var(--muted);">🥈</div>
+          <div style="width:64px; height:64px; border-radius:12px; background:rgba(99,102,241,0.2); border:1px solid rgba(99,102,241,0.3); display:flex; align-items:center; justify-content:center; font-size:1.75rem; color:var(--muted);">🥉</div>
+          <div style="width:64px; height:64px; border-radius:12px; background:rgba(99,102,241,0.2); border:1px solid rgba(99,102,241,0.3); display:flex; align-items:center; justify-content:center; font-size:1.75rem; color:var(--muted);">📚</div>
+          <div style="width:64px; height:64px; border-radius:12px; background:rgba(99,102,241,0.2); border:1px solid rgba(99,102,241,0.3); display:flex; align-items:center; justify-content:center; font-size:1.75rem; color:var(--muted);">🎯</div>
+          <div style="width:64px; height:64px; border-radius:12px; background:rgba(99,102,241,0.2); border:1px solid rgba(99,102,241,0.3); display:flex; align-items:center; justify-content:center; font-size:1.75rem; color:var(--muted);">🔬</div>
+          <div style="width:64px; height:64px; border-radius:12px; background:rgba(99,102,241,0.2); border:1px solid rgba(99,102,241,0.3); display:flex; align-items:center; justify-content:center; font-size:1.75rem; color:var(--muted);">🌌</div>
+          <p style="color:var(--muted); font-size:0.85rem; margin-top:16px;">Gana más insignias completando lecciones y rutas de aprendizaje.</p>
+        </div>
       </div>
 
       <div class="features-grid">
@@ -106,109 +99,5 @@
     </div>
   </footer>
 
-  <script>
-    const insignias = [
-      { id: 1, emoji: '👣', nombre: 'Primeros pasos', desc: 'Completa tu primera lección', condicion: () => totalLeccionesCompletadas() >= 1 },
-      { id: 2, emoji: '📚', nombre: 'Lector ávido', desc: 'Completa 3 lecciones', condicion: () => totalLeccionesCompletadas() >= 3 },
-      { id: 3, emoji: '🎓', nombre: 'Estudiante constante', desc: 'Completa 5 lecciones', condicion: () => totalLeccionesCompletadas() >= 5 },
-      { id: 4, emoji: '🧠', nombre: 'Pensador lógico', desc: 'Completa todas las lecciones de Lógica', condicion: () => leccionesDe('Lógica') >= 5 },
-      { id: 5, emoji: '🔢', nombre: 'Mente numérica', desc: 'Completa todas las lecciones de Aritmética', condicion: () => leccionesDe('Aritmética') >= 5 },
-      { id: 6, emoji: '💻', nombre: 'Primer código', desc: 'Completa todas las lecciones de Programación', condicion: () => leccionesDe('Programación') >= 5 },
-      { id: 7, emoji: '🧪', nombre: 'Científico', desc: 'Completa todas las lecciones de Química', condicion: () => leccionesDe('Química') >= 5 },
-      { id: 8, emoji: '⚛️', nombre: 'Físico', desc: 'Completa todas las lecciones de Física', condicion: () => leccionesDe('Física') >= 5 },
-      { id: 9, emoji: '🧬', nombre: 'Biólogo', desc: 'Completa todas las lecciones de Biología', condicion: () => leccionesDe('Biología') >= 5 },
-      { id: 10, emoji: '🌍', nombre: 'Explorador terrestre', desc: 'Completa todas las lecciones de Ecología', condicion: () => leccionesDe('Ecología') >= 5 },
-      { id: 11, emoji: '🌤️', nombre: 'Observador del clima', desc: 'Completa todas las lecciones de Clima y Tiempo', condicion: () => leccionesDe('Clima y Tiempo') >= 5 },
-      { id: 12, emoji: '☀️', nombre: 'Viaje al Sistema Solar', desc: 'Completa todas las lecciones de Sistema Solar', condicion: () => leccionesDe('Sistema Solar') >= 5 },
-      { id: 13, emoji: '⭐', nombre: 'Observador estelar', desc: 'Completa todas las lecciones de Estrellas y Galaxias', condicion: () => leccionesDe('Estrellas y Galaxias') >= 6 },
-      { id: 14, emoji: '🚀', nombre: 'Astronauta', desc: 'Completa todas las lecciones de Exploración Espacial', condicion: () => leccionesDe('Exploración Espacial') >= 7 },
-      { id: 15, emoji: '🌌', nombre: 'Cosmólogo', desc: 'Completa todas las lecciones de Cosmología', condicion: () => leccionesDe('Cosmología') >= 6 },
-      { id: 16, emoji: '🗺️', nombre: 'Ruta completada', desc: 'Completa una ruta de aprendizaje completa', condicion: () => algunaRutaCompleta() },
-      { id: 17, emoji: '🏆', nombre: 'Maestro del cosmos', desc: 'Completa 10 o más lecciones en total', condicion: () => totalLeccionesCompletadas() >= 10 }
-    ];
-
-    function leerProgresoMaterias() {
-      const claves = Object.keys(localStorage);
-      const resultado = {};
-      claves.forEach(k => {
-        if (k.startsWith('au_progress_')) {
-          const materia = k.replace('au_progress_', '').replace(/_/g, ' ');
-          const ids = JSON.parse(localStorage.getItem(k) || '[]');
-          resultado[materia] = ids.length;
-        }
-      });
-      return resultado;
-    }
-
-    function leerProgresoRutas() {
-      const claves = Object.keys(localStorage);
-      const resultado = {};
-      claves.forEach(k => {
-        if (k.startsWith('au_ruta_')) {
-          const ruta = k.replace('au_ruta_', '');
-          const ids = JSON.parse(localStorage.getItem(k) || '[]');
-          resultado[ruta] = ids.length;
-        }
-      });
-      return resultado;
-    }
-
-    function totalLeccionesCompletadas() {
-      const p = leerProgresoMaterias();
-      return Object.values(p).reduce((a, b) => a + b, 0);
-    }
-
-    function leccionesDe(materia) {
-      const p = leerProgresoMaterias();
-      return p[materia] || 0;
-    }
-
-    function algunaRutaCompleta() {
-      const rutas = leerProgresoRutas();
-      const totales = { programador: 9, cosmos: 6, datos: 6, arte: 5 };
-      for (const [ruta, completadas] of Object.entries(rutas)) {
-        if (completadas >= (totales[ruta] || 0)) return true;
-      }
-      return false;
-    }
-
-    function desbloquear(id) {
-      const clave = 'au_insignia_' + id;
-      if (!localStorage.getItem(clave)) { localStorage.setItem(clave, '1'); return true; }
-      return false;
-    }
-
-    function estaDesbloqueada(id) {
-      return localStorage.getItem('au_insignia_' + id) === '1';
-    }
-
-    insignias.forEach(ins => { if (ins.condicion()) desbloquear(ins.id); });
-
-    const contador = document.getElementById('logros-contador');
-    const totalEl = document.getElementById('logros-total');
-    const nivel = document.getElementById('logros-nivel');
-    const grid = document.getElementById('logros-grid');
-
-    let desbloqueadas = 0;
-    insignias.forEach(ins => {
-      const desb = estaDesbloqueada(ins.id);
-      if (desb) desbloqueadas++;
-      const card = document.createElement('div');
-      card.style.cssText = 'background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:16px; text-align:center; display:flex; flex-direction:column; gap:10px; align-items:center; opacity:' + (desb ? '1' : '0.5') + '; filter:' + (desb ? 'none' : 'grayscale(100%)');
-      card.innerHTML = `
-        <div style="width:52px; height:52px; border-radius:12px; background:${desb ? 'linear-gradient(135deg, var(--gold), #fbbf24)' : 'rgba(99,102,241,0.1)'}; display:flex; align-items:center; justify-content:center; font-size:1.5rem; border:2px solid ${desb ? '#fff' : 'var(--border)'};">${ins.emoji}</div>
-        <div style="font-weight:700; color:${desb ? 'var(--text)' : 'var(--muted)'}; font-size:0.9rem;">${ins.nombre}</div>
-        <div style="font-size:0.75rem; color:var(--muted); line-height:1.3;">${ins.desc}</div>
-      `;
-      grid.appendChild(card);
-    });
-
-    if (contador) contador.textContent = desbloqueadas;
-    if (totalEl) totalEl.textContent = '/ ' + insignias.length;
-    if (nivel) {
-      const lvl = Math.floor(desbloqueadas / 3) + 1;
-      nivel.textContent = 'Nivel ' + Math.min(lvl, 6);
-    }
-  </script>
 </body>
 </html>

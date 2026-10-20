@@ -122,31 +122,6 @@
     </div>
   </section>
 
-  <script>
-    const planMap = {
-      'estudiante': 'estudiante',
-      'profesor': 'profesor',
-      'dual': 'dual'
-    };
-    document.querySelectorAll('.btn-primary').forEach((btn) => {
-      const txt = btn.textContent.trim().toLowerCase();
-      if (txt.includes('estudiante') || txt.includes('profesor') || txt.includes('dual')) {
-        let plan = 'estudiante';
-        if (txt.includes('profesor')) plan = 'profesor';
-        if (txt.includes('dual')) plan = 'dual';
-        btn.addEventListener('click', (e) => {
-          localStorage.setItem('au_plan_seleccionado', plan);
-          // No prevenir navegación; auth.html leerá el plan al cargar
-        });
-      }
-    });
-
-    const guardado = localStorage.getItem('au_plan_seleccionado');
-    if (guardado) {
-      const h2 = document.querySelector('h2');
-      if (h2) h2.textContent = h2.textContent + ' — Plan seleccionado: ' + guardado;
-    }
-  </script>
   <footer>
     <div class="container" style="text-align:center; padding:40px 0;">
       <p style="color:var(--muted); font-size:0.9rem;">© 2026 AkademiaUniversalis. Universidad virtual.</p>

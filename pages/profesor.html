@@ -85,27 +85,6 @@
     </div>
   </section>
 
-  <script>
-    const herramientasKeys = ['plan', 'evaluacion', 'correccion', 'grupo'];
-    document.querySelectorAll('button').forEach((btn) => {
-      const txt = btn.textContent.trim();
-      if (txt === 'Crear plan' || txt === 'Crear evaluación' || txt === 'Revisar entregas' || txt === 'Gestionar grupo') {
-        const todos = [...document.querySelectorAll('button')].filter(b =>
-          b.textContent.trim() === 'Crear plan' ||
-          b.textContent.trim() === 'Crear evaluación' ||
-          b.textContent.trim() === 'Revisar entregas' ||
-          b.textContent.trim() === 'Gestionar grupo');
-        const idx = todos.indexOf(btn);
-        const key = herramientasKeys[idx] || 'plan';
-        const a = document.createElement('a');
-        a.href = 'profesor-herramienta.html?herramienta=' + key;
-        a.className = 'btn-primary';
-        a.style.cssText = 'padding:8px 16px; font-size:0.85rem; text-align:center; text-decoration:none; display:block;';
-        a.textContent = txt;
-        btn.replaceWith(a);
-      }
-    });
-  </script>
   <footer>
     <div class="container" style="text-align:center; padding:40px 0;">
       <p style="color:var(--muted); font-size:0.9rem;">© 2026 AkademiaUniversalis. Universidad virtual.</p>
