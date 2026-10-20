@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="../css/style.css">
   <link rel="manifest" href="../manifest.json">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <script defer src="../js/auth.js"></script>
   <script defer src="../js/main.js"></script>
 </head>
 <body>
@@ -132,6 +133,22 @@
     </div>
   </section>
 
+  <script>
+    const materiasReanudar = ['Álgebra', 'Historia', 'Programación'];
+    document.querySelectorAll('button').forEach((btn) => {
+      if (btn.textContent.trim() === 'Reanudar') {
+        const todos = [...document.querySelectorAll('button')].filter(b => b.textContent.trim() === 'Reanudar');
+        const idx = todos.indexOf(btn);
+        const materia = materiasReanudar[idx] || 'Materia';
+        const a = document.createElement('a');
+        a.href = 'aula-clase.html?materia=' + encodeURIComponent(materia);
+        a.className = 'btn-outline';
+        a.style.cssText = 'flex:1; padding:8px 12px; font-size:0.85rem; text-align:center; text-decoration:none; display:block;';
+        a.textContent = 'Entrar al aula';
+        btn.replaceWith(a);
+      }
+    });
+  </script>
   <footer>
     <div class="container" style="text-align:center; padding:40px 0;">
       <p style="color:var(--muted); font-size:0.9rem;">© 2026 AkademiaUniversalis. Universidad virtual.</p>

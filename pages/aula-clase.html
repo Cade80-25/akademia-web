@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="clase-title">Aula de Clase | AkademiaUniversalis</title>
+  <meta name="description" content="Aula de clase interactiva por materia de AkademiaUniversalis. Lecciones, progreso y contenido multimedia.">
+  <meta name="theme-color" content="#0a0f1a">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <script defer src="../js/auth.js"></script>
+  <script defer src="../js/main.js"></script>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="materias.html" class="logo">
+        <div class="logo-mark" aria-hidden="true">AU</div>
+        <span>AkademiaUniversalis</span>
+      </a>
+
+      <button class="mobile-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="materias.html">Materias</a>
+        <a href="aula.html">Aula Virtual</a>
+        <a href="rutas.html">Rutas</a>
+        <a href="biblioteca.html">Biblioteca</a>
+        <a href="mapas.html">Mapas</a>
+        <a href="astronomia.html">Astronomía</a>
+        <a href="comunidad.html">Comunidad</a>
+        <a href="logros.html">Logros</a>
+        <a href="profesor.html">Profesor</a>
+        <a href="institucion.html">Institución</a>
+        <a href="precios.html" class="btn-ghost">Precios</a>
+        <a href="auth.html" class="btn-primary" style="margin-left:8px;">Iniciar sesión</a>
+      </nav>
+    </div>
+  </header>
+
+  <section style="padding:90px 0 60px;">
+    <div class="container">
+      <!-- Barra superior: volver + materia -->
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:32px; flex-wrap:wrap; gap:16px;">
+        <a href="materias.html" class="btn-ghost" style="display:flex; align-items:center; gap:8px;">
+          <span>←</span> Volver a materias
+        </a>
+        <div style="background:var(--bg2); border:1px solid var(--border); border-radius:8px; padding:8px 16px; font-size:0.85rem; color:var(--muted);">
+          Aula de clase · <span id="clase-materia-nombre">Materia</span>
+        </div>
+      </div>
+
+      <!-- Progreso -->
+      <div style="margin-bottom:32px;">
+        <div style="display:flex; justify-content:space-between; margin-bottom:8px; font-size:0.85rem; color:var(--muted);">
+          <span>Progreso de la materia</span>
+          <span id="clase-progreso-texto">0%</span>
+        </div>
+        <div style="background:rgba(255,255,255,0.03); height:8px; border-radius:4px; overflow:hidden;">
+          <div id="clase-progreso-barra" style="background:linear-gradient(90deg, var(--accent), var(--accent2)); height:100%; width:0%; transition:width 0.5s;"></div>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 1fr 340px; gap:40px; align-items:start;">
+        
+        <!-- Lecciones -->
+        <div id="clase-lecciones">
+          <div style="grid-column:1/-1; text-align:center; padding:60px 20px; color:var(--muted);">
+            Cargando lecciones...
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside>
+          <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:24px; position:sticky; top:90px;">
+            <h3 style="margin-bottom:16px;">Tutor IA</h3>
+            <p style="color:var(--muted); font-size:0.9rem; margin-bottom:16px; line-height:1.6;">
+              Hola, soy tu tutor para esta materia. Puedo explicarte conceptos, resolver dudas y guiarte por cada lección.
+            </p>
+            <div style="background:rgba(99,102,241,0.08); border:1px solid rgba(99,102,241,0.2); border-radius:10px; padding:16px;">
+              <div style="font-size:0.8rem; color:var(--muted); margin-bottom:8px;">¿Necesitas ayuda?</div>
+              <button id="clase-tutor-btn" class="btn-primary" style="width:100%; padding:10px; font-size:0.9rem;">Preguntar al tutor</button>
+            </div>
+
+            <div style="margin-top:24px; padding-top:24px; border-top:1px solid var(--border);">
+              <h4 style="margin-bottom:12px; font-size:0.9rem;">Lección actual</h4>
+              <div id="clase-leccion-actual" style="font-size:0.85rem; color:var(--muted);">—</div>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="text-align:center; padding:40px 0;">
+      <p style="color:var(--muted); font-size:0.9rem;">© 2026 AkademiaUniversalis. Universidad virtual.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Lecciones por materia (síntesis de cada disciplina)
+    const leccionesPorMateria = {
+      "Física": [
+        { id: 1, titulo: "Introducción a la Física", contenido: "La física estudia la materia, la energía y sus interacciones. Conoceremos el método científico y las unidades del SI.", video: "https://www.youtube.com/embed/d40JvPzQYpw" },
+        { id: 2, titulo: "Mecánica Clásica", contenido: "Las leyes de Newton describen el movimiento de los cuerpos. Estudiaremos cinemática, dinámica y trabajo.", video: "https://www.youtube.com/embed/z0v0v0v0v0v" },
+        { id: 3, titulo: "Termodinámica", contenido: "Calor, temperatura y las leyes de la termodinámica. Entropía y máquinas térmicas.", video: "" },
+        { id: 4, titulo: "Electromagnetismo", contenido: "Cargas eléctricas, campos magnéticos, circuitos y la ecuación de Maxwell.", video: "" },
+        { id: 5, titulo: "Física Moderna", contenido: "Relatividad especial, física cuántica y partículas elementales.", video: "" }
+      ],
+      "Química": [
+        { id: 1, titulo: "Estructura Atómica", contenido: "Modelo atómico, tabla periódica y configuración electrónica.", video: "" },
+        { id: 2, titulo: "Enlaces Químicos", contenido: "Enlaces iónicos, covalentes y metálicos. Geometría molecular.", video: "" },
+        { id: 3, titulo: "Estequiometría", contenido: "El mol, molaridad y balances de masa en reacciones químicas.", video: "" },
+        { id: 4, titulo: "Química Orgánica", contenido: "Hidrocarburos, grupos funcionales y reacciones orgánicas básicas.", video: "" },
+        { id: 5, titulo: "Equilibrio Químico", contenido: "Equilibrio dinámico, constantes de equilibrio y titulaciones.", video: "" }
+      ],
+      "Programación": [
+        { id: 1, titulo: "Fundamentos de Programación", contenido: "Variables, tipos de datos, operadores y estructuras de control.", video: "" },
+        { id: 2, titulo: "Python Básico", contenido: "Sintaxis de Python, funciones, módulos y manejo de archivos.", video: "" },
+        { id: 3, titulo: "Programación Orientada a Objetos", contenido: "Clases, objetos, herencia, polimorfismo y encapsulamiento.", video: "" },
+        { id: 4, titulo: "Estructuras de Datos", contenido: "Listas, pilas, colas, árboles, grafos y tablas hash.", video: "" },
+        { id: 5, titulo: "Desarrollo Web", contenido: "HTML, CSS, JavaScript y consumo de APIs REST.", video: "" }
+      ]
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const materiaNombre = params.get('materia');
+    const lecciones = leccionesPorMateria[materiaNombre] || [
+      { id: 1, titulo: "Introducción", contenido: "Bienvenido a esta materia. Comenzamos con los fundamentos.", video: "" },
+      { id: 2, titulo: "Unidad 2", contenido: "Continuamos profundizando en los conceptos clave.", video: "" },
+      { id: 3, titulo: "Unidad 3", contenido: "Aplicamos lo aprendido en ejercicios prácticos.", video: "" },
+      { id: 4, titulo: "Unidad 4", contenido: "Revisión y síntesis de la materia.", video: "" },
+      { id: 5, titulo: "Evaluación Final", contenido: "Prueba de conocimientos para completar la materia.", video: "" }
+    ];
+
+    const claseMateriaNombre = document.getElementById('clase-materia-nombre');
+    const claseLecciones = document.getElementById('clase-lecciones');
+    const progresoTexto = document.getElementById('clase-progreso-texto');
+    const progresoBarra = document.getElementById('clase-progreso-barra');
+    const leccionActual = document.getElementById('clase-leccion-actual');
+    const claseTitle = document.getElementById('clase-title');
+
+    if (claseMateriaNombre) claseMateriaNombre.textContent = materiaNombre || 'Materia';
+    if (claseTitle) claseTitle.textContent = (materiaNombre || 'Materia') + ' — Aula de Clase | AkademiaUniversalis';
+
+    // Estado de progreso en localStorage
+    const PROGRESS_KEY = 'au_progress_' + (materiaNombre || 'default').toLowerCase().replace(/\s+/g, '_');
+    let completadas = JSON.parse(localStorage.getItem(PROGRESS_KEY)) || [];
+
+    function completarLeccion(id) {
+      if (!completadas.includes(id)) {
+        completadas.push(id);
+        localStorage.setItem(PROGRESS_KEY, JSON.stringify(completadas));
+      }
+      actualizarProgreso();
+    }
+
+    function actualizarProgreso() {
+      const total = lecciones.length;
+      const hecho = completadas.length;
+      const pct = total ? Math.round((hecho / total) * 100) : 0;
+      if (progresoTexto) progresoTexto.textContent = pct + '%';
+      if (progresoBarra) progresoBarra.style.width = pct + '%';
+      if (leccionActual) {
+        const siguiente = lecciones.find(l => !completadas.includes(l.id));
+        leccionActual.textContent = siguiente ? siguiente.titulo : '¡Todas las lecciones completadas!';
+      }
+    }
+
+    function renderLecciones() {
+      claseLecciones.innerHTML = '';
+      lecciones.forEach(leccion => {
+        const done = completadas.includes(leccion.id);
+        const card = document.createElement('div');
+        card.className = 'reveal';
+        card.style.cssText = 'background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:24px; margin-bottom:20px; display:flex; flex-direction:column; gap:16px;';
+        card.innerHTML = `
+          <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div>
+              <div style="display:flex; align-items:center; gap:8px; font-size:0.8rem; color:var(--muted); margin-bottom:6px;">
+                <span style="font-weight:600; color:var(--accent);">Lección ${leccion.id}</span>
+                <span style="background:${done ? 'var(--green)' : 'var(--border)'}; color:${done ? '#fff' : 'var(--muted)'}; padding:2px 8px; border-radius:4px; font-size:0.7rem;">${done ? 'Completada' : 'Pendiente'}</span>
+              </div>
+              <h3 style="margin-bottom:8px; color:var(--text);">${leccion.titulo}</h3>
+              <p style="color:var(--muted); font-size:0.9rem; line-height:1.6; margin-bottom:16px;">${leccion.contenido}</p>
+            </div>
+            <button onclick="completarLeccion(${leccion.id})" class="btn-${done ? 'outline' : 'primary'}" style="padding:10px 18px; font-size:0.85rem; ${done ? 'opacity:0.6; cursor:not-allowed;' : ''}">${done ? '✓ Hecho' : 'Marcar completada'}</button>
+          </div>
+          ${leccion.video ? `
+            <div style="background:#000; border-radius:8px; overflow:hidden; aspect-ratio:16/9;">
+              <iframe src="${leccion.video}?modestbranding=1&rel=0" style="width:100%; height:100%; border:0;" allowfullscreen></iframe>
+            </div>
+          ` : ''}
+        `;
+        claseLecciones.appendChild(card);
+      });
+      actualizarProgreso();
+    }
+
+    window.completarLeccion = completarLeccion;
+
+    renderLecciones();
+
+    document.getElementById('clase-tutor-btn')?.addEventListener('click', () => {
+      alert('El tutor IA está en desarrollo. Mientras tanto, puedes revisar la ficha de la materia en el catálogo.');
+    });
+  </script>
+</body>
+</html>
