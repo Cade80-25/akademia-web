@@ -54,9 +54,11 @@
         <div style="width:64px; height:64px; background:linear-gradient(135deg, var(--accent), var(--accent2)); border-radius:16px; display:flex; align-items:center; justify-content:center; font-size:2rem; margin:0 auto 24px;">🏫</div>
         <h3 style="font-size:1.75rem; margin-bottom:16px;">Tu institución, tu plataforma</h3>
         <p style="color:var(--muted); max-width:600px; margin:0 auto 24px;">Crea un entorno privado para tu centro educativo o empresa. Acceso controlado, contenido personalizado y seguimiento institucional.</p>
-        <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:16px;">
           <span style="font-family:monospace; background:rgba(99,102,241,0.1); color:var(--accent); padding:8px 16px; border-radius:8px; font-weight:600;">INV-ABC-123</span>
-          <p style="color:var(--muted); font-size:0.85rem; margin-top:8px;">Código de invitación de ejemplo</p>
+          <input type="text" id="inst-codigo" placeholder="Ingresa tu código INV-XXX" style="padding:8px 12px; border-radius:8px; border:1px solid var(--border); background:var(--bg2); color:var(--text); font-family:monospace; font-weight:600; max-width:260px;">
+          <button id="inst-btn" style="padding:8px 16px; font-size:0.85rem;">Validar</button>
+          <p id="inst-msg" style="color:var(--muted); font-size:0.85rem; margin-top:8px;">Código de invitación de ejemplo</p>
         </div>
       </div>
 
@@ -81,6 +83,47 @@
     </div>
   </section>
 
+  <script>
+    const input = document.getElementById('inst-codigo');
+    const btn = document.getElementById('inst-btn');
+    const msg = document.getElementById('inst-msg');
+
+    function esCodigoValido(codigo) {
+      return /^INV-[A-Z0-9]{3}-[A-Z0-9]{3}$/.test(codigo.trim());
+    }
+
+    const guardado = localStorage.getItem('au_inst_codigo');
+    if (guardado) {
+      input.value = guardado;
+      input.disabled = true;
+      btn.disabled = true;
+      btn.textContent = 'Validado';
+      btn.className = 'btn-outline';
+      msg.textContent = 'Institución vinculada: ' + guardado;
+      msg.style.color = 'var(--green)';
+    }
+
+    btn.addEventListener('click', () => {
+      const codigo = input.value.trim();
+      if (!codigo) {
+        msg.textContent = 'Ingresa un código de invitación.';
+        msg.style.color = 'var(--red)';
+        return;
+      }
+      if (!esCodigoValido(codigo)) {
+        msg.textContent = 'Formato inválido. Usa INV-XXX-XXX (ej. INV-ABC-123).';
+        msg.style.color = 'var(--red)';
+        return;
+      }
+      localStorage.setItem('au_inst_codigo', codigo);
+      input.disabled = true;
+      btn.disabled = true;
+      btn.textContent = 'Validado';
+      btn.className = 'btn-outline';
+      msg.textContent = 'Institución vinculada: ' + codigo;
+      msg.style.color = 'var(--green)';
+    });
+  </script>
   <footer>
     <div class="container" style="text-align:center; padding:40px 0;">
       <p style="color:var(--muted); font-size:0.9rem;">© 2026 AkademiaUniversalis. Universidad virtual.</p>
