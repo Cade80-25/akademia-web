@@ -83,6 +83,47 @@
     </div>
   </section>
 
+  <script>
+    const grupos = [
+      { nombre: 'Grupo de Física', clave: 'au_grupo_fisica' },
+      { nombre: 'Programadores AU', clave: 'au_grupo_programadores' },
+      { nombre: 'Observadores del Cielo', clave: 'au_grupo_astronomia' },
+      { nombre: 'Profesores AU', clave: 'au_grupo_profesores', tipo: 'solicitud' }
+    ];
+
+    document.querySelectorAll('button').forEach((btn) => {
+      const txt = btn.textContent.trim();
+      if (txt === 'Unirme' || txt === 'Solicitar acceso') {
+        const todos = [...document.querySelectorAll('button')].filter(b => b.textContent.trim() === 'Unirme' || b.textContent.trim() === 'Solicitar acceso');
+        const idx = todos.indexOf(btn);
+        const g = grupos[idx];
+        if (!g) return;
+
+        const estado = localStorage.getItem(g.clave);
+        if (estado === 'miembro' || estado === 'solicitado') {
+          btn.textContent = estado === 'solicitado' ? 'Solicitud enviada' : 'Miembro';
+          btn.className = 'btn-outline';
+          btn.disabled = true;
+        }
+
+        btn.addEventListener('click', () => {
+          if (g.tipo === 'solicitud') {
+            localStorage.setItem(g.clave, 'solicitado');
+            btn.textContent = 'Solicitud enviada';
+            btn.className = 'btn-outline';
+            btn.disabled = true;
+            alert('Solicitud de acceso enviada al grupo "' + g.nombre + '". Te avisaremos cuando seas aceptado.');
+          } else {
+            localStorage.setItem(g.clave, 'miembro');
+            btn.textContent = 'Miembro';
+            btn.className = 'btn-outline';
+            btn.disabled = true;
+            alert('¡Te has unido al grupo "' + g.nombre + '"!');
+          }
+        });
+      }
+    });
+  </script>
   <footer>
     <div class="container" style="text-align:center; padding:40px 0;">
       <p style="color:var(--muted); font-size:0.9rem;">© 2026 AkademiaUniversalis. Universidad virtual.</p>
